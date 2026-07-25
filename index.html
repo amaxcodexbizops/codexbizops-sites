@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX BizOps — Professional Websites for Small Businesses</title>
+<meta name="description" content="Get a professional website built free — you only pay monthly hosting. Free personalized mock-up, no commitment. Designed for hardworking small business owners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;color:#1E1E1E;background:#F8F5EE;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ── DESIGN TOKENS ────────────────────────────────────────────── */
+:root{
+  --navy:#373737;
+  --navy-light:#454545;
+  --cream:#F8F5EE;
+  --cream-dark:#F0ECE3;
+  --white:#FFFFFF;
+  --sage:#1A3058;
+  --sage-light:#2a4878;
+  --gold:#c0b283;
+  --gold-dark:#a09070;
+  --gold-light:#d4c8a0;
+  --text:#1E1E1E;
+  --text-muted:#5C5C5C;
+  --text-light:#8A8A8A;
+  --border:#DDD8CE;
+  --shadow-sm:0 2px 8px rgba(55,55,55,.08);
+  --shadow-md:0 6px 24px rgba(55,55,55,.12);
+  --shadow-lg:0 16px 48px rgba(55,55,55,.16);
+  --radius:12px;
+  --radius-lg:20px;
+}
+
+/* ── UTILITY ──────────────────────────────────────────────────── */
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.section{padding:88px 0}
+.section--alt{background:var(--white)}
+.section--navy{background:var(--navy)}
+.section--cream-dark{background:var(--cream-dark)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+.eyebrow--gold{color:var(--gold)}
+.eyebrow--white{color:var(--gold)}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-weight:700}
+.lead{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--text-muted);line-height:1.75;max-width:680px}
+.lead--center{text-align:center;margin:0 auto}
+
+/* ── BUTTONS ──────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:8px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap;text-align:center}
+.btn-primary{background:var(--gold);color:#373737;box-shadow:0 4px 16px rgba(192,178,131,.35)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,178,131,.4)}
+.btn-secondary{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn-secondary:hover{background:var(--navy);color:var(--white)}
+.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.5)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+.btn-lg{padding:18px 36px;font-size:1.1rem}
+.btn-sm{padding:10px 20px;font-size:.9rem}
+.btn-block{width:100%;justify-content:center}
+
+/* ── NAV ──────────────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:100;transition:top .3s ease;background:rgba(55,55,55,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav--hidden{top:-120px}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto}
+.nav__logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--white);letter-spacing:-.01em}
+.nav__logo span{color:var(--gold)}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 60%,#454545 100%);padding:96px 0 80px;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero__inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(192,178,131,.15);border:1px solid rgba(192,178,131,.3);color:var(--gold-light);font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:24px}
+.hero h1{color:var(--white);margin-bottom:20px}
+.hero h1 em{color:var(--gold-light);font-style:normal}
+.hero__sub{font-size:1.15rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:36px;max-width:520px}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:16px}
+.hero__skip{margin-bottom:28px;font-size:.82rem;color:rgba(255,255,255,.45)}
+.hero__skip a{color:var(--gold-light);font-weight:600;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.hero__skip a:hover{color:var(--gold)}
+.hero__trust{display:flex;flex-wrap:wrap;gap:20px}
+.hero__trust-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.65);font-size:.85rem}
+.hero__trust-item svg{flex-shrink:0;color:var(--gold)}
+.hero__visual{position:relative}
+.hero__device{background:var(--white);border-radius:16px;box-shadow:var(--shadow-lg),0 0 0 1px rgba(255,255,255,.1);overflow:hidden}
+.hero__device-bar{background:#F0ECE3;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #DDD8CE}
+.hero__device-dot{width:10px;height:10px;border-radius:50%}
+.hero__device-url{flex:1;background:#FFF;border-radius:4px;padding:5px 10px;font-size:.72rem;color:#8A8A8A;font-family:monospace}
+.hero__screen{padding:20px}
+.hero__screen-header{height:40px;background:linear-gradient(90deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:6px;margin-bottom:12px;display:flex;align-items:center;padding:0 12px;gap:10px}
+.hero__screen-logo{width:80px;height:12px;background:rgba(255,255,255,.9);border-radius:3px}
+.hero__screen-nav{display:flex;gap:6px;margin-left:auto}
+.hero__screen-nav span{width:36px;height:8px;background:rgba(255,255,255,.4);border-radius:3px}
+.hero__screen-hero-band{height:90px;background:linear-gradient(135deg,#454545,#373737);border-radius:6px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px}
+.hero__screen-hero-band h-line{display:block;height:10px;background:rgba(255,255,255,.9);border-radius:3px;width:55%}
+.hero__screen-hero-band sub-line{display:block;height:7px;background:rgba(255,255,255,.5);border-radius:3px;width:38%}
+.hero__screen-hero-band cta-btn{display:block;height:20px;background:var(--gold);border-radius:4px;width:28%}
+.hero__screen-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.hero__screen-card{background:#F8F5EE;border-radius:6px;padding:10px;height:64px}
+.hero__screen-card-icon{width:18px;height:18px;background:var(--navy);border-radius:4px;margin-bottom:6px}
+.hero__screen-card-line{height:6px;background:#DDD8CE;border-radius:3px;margin-bottom:4px}
+.hero__screen-card-line.short{width:60%}
+.hero__screen-footer{height:28px;background:#F0ECE3;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:16px}
+.hero__screen-footer span{width:50px;height:6px;background:#DDD8CE;border-radius:3px}
+.hero__screen-phone{position:absolute;bottom:-20px;right:-20px;width:110px;background:var(--white);border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden;border:3px solid var(--white)}
+.hero__screen-phone-bar{height:14px;background:var(--navy);border-radius:0}
+.hero__screen-phone-content{padding:8px}
+.hero__screen-phone-line{height:6px;background:#F0ECE3;border-radius:3px;margin-bottom:5px}
+.hero__screen-phone-line.dark{background:#DDD8CE}
+.hero__screen-phone-btn{height:14px;background:var(--gold);border-radius:4px;margin-top:7px}
+
+/* ── PAIN SECTION ─────────────────────────────────────────────── */
+.pain{background:var(--white)}
+.pain__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px}
+.pain__card{padding:36px;border-radius:var(--radius-lg);border:1px solid var(--border);position:relative;overflow:hidden}
+.pain__card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.pain__card--a::before{background:linear-gradient(90deg,#C0392B,#E74C3C)}
+.pain__card--b::before{background:linear-gradient(90deg,#8B6914,var(--gold))}
+.pain__icon{width:52px;height:52px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px}
+.pain__card h3{margin-bottom:12px;color:var(--navy)}
+.pain__card p{color:var(--text-muted);line-height:1.7}
+.pain__stat{margin-top:16px;padding:14px;background:var(--cream-dark);border-radius:8px;font-size:.85rem;font-weight:600;color:var(--navy)}
+
+/* ── SOLUTION SECTION ─────────────────────────────────────────── */
+.solution{background:var(--cream)}
+.solution__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
+.solution__item{background:var(--white);padding:32px;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:box-shadow .2s}
+.solution__item:hover{box-shadow:var(--shadow-md)}
+.solution__item-icon{width:52px;height:52px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px}
+.solution__item h3{font-size:1.05rem;margin-bottom:10px;color:var(--navy)}
+.solution__item p{font-size:.92rem;color:var(--text-muted);line-height:1.65}
+
+/* ── PROCESS SECTION ──────────────────────────────────────────── */
+.process{background:var(--white)}
+.process__steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;position:relative}
+.process__steps::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,rgba(55,55,55,.2),rgba(192,178,131,.3));opacity:1}
+.process__step{text-align:center;padding:0 16px;position:relative}
+.process__step-num{width:72px;height:72px;border-radius:50%;background:var(--navy);color:var(--white);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 16px rgba(55,55,55,.25);position:relative;z-index:1}
+.process__step:nth-child(4) .process__step-num{background:var(--gold)}
+.process__step h3{font-size:.95rem;margin-bottom:8px;color:var(--navy)}
+.process__step p{font-size:.84rem;color:var(--text-muted);line-height:1.6}
+.process__free-badge{display:inline-block;background:rgba(26,48,88,.1);color:var(--sage);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:100px;margin-top:8px;letter-spacing:.04em;text-transform:uppercase}
+.process__time-badge{display:inline-block;background:rgba(192,178,131,.12);color:var(--gold-dark);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:100px;margin-top:8px;letter-spacing:.04em;text-transform:uppercase}
+
+/* ── PORTFOLIO SECTION ────────────────────────────────────────── */
+.portfolio{background:var(--cream-dark)}
+.portfolio__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:52px}
+.portfolio__card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.portfolio__card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.portfolio__img{height:200px;background:linear-gradient(135deg,#373737 0%,#454545 50%,#454545 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.portfolio__img-placeholder{text-align:center;color:rgba(255,255,255,.5);font-size:.85rem;padding:20px}
+.portfolio__img-placeholder strong{display:block;font-family:'Playfair Display',serif;font-size:1.4rem;color:rgba(255,255,255,.8);margin-bottom:8px}
+.portfolio__img span{position:absolute;top:12px;right:12px;background:var(--gold);color:#373737;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:100px}
+.portfolio__info{padding:20px 24px}
+.portfolio__type{font-size:.75rem;font-weight:700;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.portfolio__title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.portfolio__desc{font-size:.85rem;color:var(--text-muted);line-height:1.55}
+.portfolio__note{margin-top:40px;text-align:center;padding:24px;background:var(--white);border-radius:var(--radius);border:1px dashed var(--border)}
+.portfolio__note p{color:var(--text-muted);font-size:.9rem}
+.portfolio__note strong{color:var(--navy)}
+
+/* ── PACKAGES SECTION ─────────────────────────────────────────── */
+.packages{background:var(--cream)}
+.packages__promo{text-align:center;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);padding:16px 24px;border-radius:var(--radius);margin-top:16px;margin-bottom:52px;font-size:.95rem}
+.packages__promo strong{color:var(--gold-light)}
+.packages__grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.package-card{background:var(--white);border-radius:var(--radius-lg);border:2px solid var(--border);overflow:hidden;transition:box-shadow .2s}
+.package-card--elite{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),var(--shadow-md)}
+.package-card__badge{background:var(--gold);color:#373737;font-size:.75rem;font-weight:700;padding:6px 0;text-align:center;letter-spacing:.08em;text-transform:uppercase}
+.package-card__head{padding:32px 32px 24px}
+.package-card__name{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.package-card__name--elite{color:var(--gold-dark)}
+.package-card__price{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
+.package-card__price-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:800;color:var(--navy)}
+.package-card__price-period{color:var(--text-muted);font-size:.9rem}
+.package-card__savings{font-size:.8rem;color:var(--sage);font-weight:600;margin-bottom:12px}
+.package-card__tagline{font-size:.92rem;color:var(--text-muted);line-height:1.55;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.package-card__features{padding:24px 32px}
+.package-card__feature{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:.9rem;line-height:1.5}
+.package-card__feature-check{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.package-card__feature-check svg{width:10px;height:10px}
+.package-card__feature-check--gold{background:var(--gold)}
+.package-card__feature strong{color:var(--navy);font-weight:600;display:block}
+.package-card__feature span{color:var(--text-muted);font-size:.83rem}
+.package-card__promo{margin:0 32px 20px;padding:12px 16px;background:rgba(55,55,55,.06);border-radius:8px;font-size:.83rem;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:8px}
+.package-card__promo--gold{background:rgba(192,178,131,.08);color:var(--gold-dark)}
+.package-card__footer{padding:0 32px 32px}
+.card-skip{margin-top:12px;font-size:.78rem;text-align:center;color:var(--text-muted)}
+.card-skip a{color:var(--sage);font-weight:600;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.card-skip a:hover{color:var(--navy)}
+
+/* ── BOOSTERS ─────────────────────────────────────────────────── */
+.boosters{background:var(--white)}
+.boosters__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.booster-card{padding:28px 32px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--cream);transition:border-color .2s,box-shadow .2s}
+.booster-card:hover{border-color:rgba(55,55,55,.3);box-shadow:var(--shadow-sm)}
+.booster-card__icon{width:48px;height:48px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:16px}
+.booster-card h3{font-size:1rem;color:var(--navy);margin-bottom:10px}
+.booster-card p{font-size:.9rem;color:var(--text-muted);line-height:1.65}
+.booster-card__label{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:700;color:var(--text-light);letter-spacing:.06em;text-transform:uppercase}
+
+/* ── COMPARISON ───────────────────────────────────────────────── */
+.compare{background:var(--cream-dark)}
+.compare__table{margin-top:52px;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.compare__row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;background:var(--white);border-bottom:1px solid var(--border)}
+.compare__row--head{background:var(--navy);color:var(--white)}
+.compare__row--head .compare__cell{font-weight:700;color:var(--white)}
+.compare__row--head .compare__cell:nth-child(3){background:rgba(192,178,131,.15)}
+.compare__cell{padding:18px 20px;font-size:.9rem;color:var(--text-muted);display:flex;align-items:center}
+.compare__cell:first-child{color:var(--text);font-weight:500}
+.compare__cell:nth-child(3){background:rgba(192,178,131,.04)}
+.compare__row--head .compare__cell:first-child{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,.6);font-weight:400}
+.compare__row--alt{background:#FAFAF8}
+.compare__check{color:var(--sage);font-weight:700}
+.compare__x{color:#C0392B}
+.compare__star{color:var(--gold-dark);font-weight:700}
+
+/* ── FAQ SECTION ──────────────────────────────────────────────── */
+.faq{background:var(--white)}
+.faq__list{margin-top:52px;display:flex;flex-direction:column;gap:16px;max-width:760px;margin-left:auto;margin-right:auto}
+.faq__item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq__q{width:100%;background:none;border:none;padding:22px 24px;text-align:left;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .15s}
+.faq__q:hover{background:var(--cream)}
+.faq__arrow{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;transition:transform .25s,background .2s}
+.faq__arrow svg{color:var(--navy);transition:color .2s}
+.faq__item.open .faq__arrow{transform:rotate(180deg);background:var(--navy)}
+.faq__item.open .faq__arrow svg{color:var(--white)}
+.faq__a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq__item.open .faq__a{max-height:600px}
+.faq__a-inner{padding:0 24px 22px;font-size:.93rem;color:var(--text-muted);line-height:1.7}
+.faq__a-inner strong{color:var(--navy)}
+
+/* ── FINAL CTA / FORM ─────────────────────────────────────────── */
+.final-cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:100px 0}
+.final-cta__inner{max-width:720px;margin:0 auto;text-align:center}
+.final-cta h2{color:var(--white);margin-bottom:16px}
+.final-cta .lead{color:rgba(255,255,255,.75);margin-bottom:40px}
+.final-cta__form-box{background:var(--white);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-lg);margin-bottom:28px}
+.ghl-form-placeholder{border:2px dashed var(--border);border-radius:var(--radius);padding:48px 24px;text-align:center;color:var(--text-muted)}
+.ghl-form-placeholder svg{margin:0 auto 12px;opacity:.4}
+.ghl-form-placeholder p{font-size:.9rem;line-height:1.6}
+.ghl-form-placeholder code{font-size:.78rem;background:var(--cream-dark);padding:2px 6px;border-radius:4px;font-family:monospace}
+.final-cta__questions{color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:28px}
+.final-cta__questions a{color:var(--gold-light);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.final-cta__questions a:hover{color:var(--white)}
+.final-cta__trust{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.final-cta__trust-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.55);font-size:.82rem}
+.final-cta__trust-item svg{color:rgba(255,255,255,.4);flex-shrink:0}
+
+/* ── FOOTER ───────────────────────────────────────────────────── */
+.footer{background:#242424;padding:48px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer__top{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+.footer__links{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.footer__links a{color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s;white-space:nowrap}
+.footer__links a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center}
+.footer__copy{color:rgba(255,255,255,.35);font-size:.8rem;margin-bottom:10px}
+.footer__scripture{color:rgba(255,255,255,.22);font-size:.75rem;font-style:italic}
+@media(max-width:640px){
+  .footer__top{flex-direction:column;align-items:flex-start;gap:24px}
+  .footer__links{gap:16px}
+}
+
+/* ── SECTION HEADER ───────────────────────────────────────────── */
+.section-header{text-align:center;margin-bottom:8px}
+.section-header h2{margin-bottom:16px}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media(max-width:1024px){
+  .solution__grid{grid-template-columns:repeat(2,1fr)}
+  .boosters__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .hero__inner{grid-template-columns:1fr;gap:48px}
+  .hero__photo{max-height:320px}
+  .pain__grid{grid-template-columns:1fr}
+  .packages__grid{grid-template-columns:1fr}
+  .compare__row{grid-template-columns:2fr 1fr 1fr 1fr;font-size:.8rem}
+  .compare__cell{padding:14px 12px}
+  .process__steps{grid-template-columns:repeat(3,1fr);gap:32px}
+  .process__steps::before{display:none}
+}
+@media(max-width:640px){
+  .section{padding:64px 0}
+  .hero{padding:72px 0 64px}
+  .hero h1{font-size:2rem}
+  .hero__ctas{flex-direction:column}
+  .btn-lg{width:100%;justify-content:center}
+  .solution__grid{grid-template-columns:1fr}
+  .boosters__grid{grid-template-columns:1fr}
+  .process__steps{grid-template-columns:1fr}
+  .final-cta__form-box{padding:24px 16px}
+}
+@media(max-width:480px){
+  .compare{overflow-x:auto}
+  .compare__table{min-width:480px}
+  .portfolio__grid{grid-template-columns:1fr}
+}
+
+/* ── LOGO IMAGE ───────────────────────────────────────────────── */
+.nav__logo-link{display:flex;align-items:center;text-decoration:none}
+.nav__logo-img{height:32px;width:auto;display:block}
+
+/* ── HERO PHOTO ───────────────────────────────────────────────── */
+.hero__photo{width:100%;border-radius:16px;box-shadow:var(--shadow-lg),0 0 0 1px rgba(255,255,255,.1);object-fit:cover;object-position:center top;max-height:480px;display:block}
+
+/* ── PORTFOLIO IMAGES ─────────────────────────────────────────── */
+.portfolio__img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+
+/* ── SCROLL ANIMATION ─────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── NAV LINKS & HAMBURGER ── */
+.nav{position:relative}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__link{color:rgba(255,255,255,.65);font-size:.88rem;font-weight:500;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav__link:hover{color:#fff}
+.nav .btn{padding:9px 20px;font-size:.87rem;border-radius:7px}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav__hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:all .3s ease}
+.nav__hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.nav__hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .nav__hamburger{display:flex}
+  .nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:#373737;flex-direction:column;align-items:stretch;padding:8px 24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:99}
+  .nav__links.open{display:flex}
+  .nav__link{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem;color:rgba(255,255,255,.75)}
+  .nav__link:last-of-type{border-bottom:none}
+  .nav .btn{margin-top:14px;width:100%;justify-content:center;padding:13px 20px;font-size:.95rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────────── -->
+<nav class="nav">
+      <div class="nav__inner">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="images/logo-white.png" alt="CODEX BizOps" style="height:80px;width:auto;display:block">
+    </a>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="index.html#packages" class="nav__link">Pricing</a>
+      <a href="index.html#faq" class="nav__link">FAQs</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="index.html#mock-up" class="btn btn-primary">Get Free Mock-Up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__badge">Summer Special — $0 Build Fee, No Commitment</div>
+        <h1>Your Business Deserves a Website That <em>Works as Hard</em> as You Do</h1>
+        <p class="hero__sub">We design and build your professional website free. You only pay a simple monthly fee. See a personalized homepage mock-up before you spend a single dollar — no pressure, no strings.</p>
+        <div class="hero__ctas">
+          <a href="#mock-up" class="btn btn-primary btn-lg">Get My Free Homepage Mock-Up →</a>
+          <a href="#packages" class="btn btn-outline-white btn-lg">See Pricing</a>
+        </div>
+        <p class="hero__skip">Already convinced? <a href="contact.html?ready=1">Skip the mock-up — get started today →</a></p>
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Design &amp; build free
+          </div>
+          <div class="hero__trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Mock-up in ~1 week
+          </div>
+          <div class="hero__trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Cancel anytime
+          </div>
+          <div class="hero__trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            No tech skills needed
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img src="images/hero-mockup.jpg" alt="Professional website design for small businesses — CODEX BizOps" class="hero__photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN SECTION ───────────────────────────────────────────── -->
+<section class="pain section section--alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Sound familiar?</div>
+      <h2>You're Losing Customers You Don't Even Know About</h2>
+      <p class="lead lead--center" style="margin-top:16px">Most business owners don't realize how much a weak online presence is costing them every single week.</p>
+    </div>
+    <div class="pain__grid">
+      <div class="pain__card pain__card--a reveal">
+        <div class="pain__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>"You don't have a website?"</h3>
+        <p>Someone gets your number from a neighbor, a flyer, or your truck on the road. They Google you before they call. They find nothing — or worse, a competitor who has a clean, professional site. You never hear from them again.</p>
+        <div class="pain__stat">46% of consumers say they won't buy from a business without a website. Many won't even call.</div>
+      </div>
+      <div class="pain__card pain__card--b reveal">
+        <div class="pain__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>"Your site looks like it's from 2012…"</h3>
+        <p>You have a site — but it's outdated, hard to read on a phone, or missing half your services. Visitors hit it and leave in seconds. A bad website can actually hurt you more than having none at all. It signals: <em>"I don't take my business seriously."</em></p>
+        <div class="pain__stat">75% of people judge a business's credibility by its website design. Your competition knows this.</div>
+      </div>
+    </div>
+    <div style="margin-top:48px;text-align:center" class="reveal">
+      <p style="font-size:1.1rem;color:var(--text-muted);max-width:620px;margin:0 auto 28px">You've built a real business through hard work and good service. Your online presence should reflect that — and it should never be the reason you lose a job.</p>
+      <a href="#mock-up" class="btn btn-primary">See What Your Site Could Look Like — Free →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTION SECTION ───────────────────────────────────────── -->
+<section class="solution section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">The CODEX Difference</div>
+      <h2>A Professional Website That Does the Work While You're on the Job</h2>
+      <p class="lead lead--center" style="margin-top:16px">Built around your services, your photos, and your service area — so customers find you, trust you, and reach out immediately.</p>
+    </div>
+    <div class="solution__grid">
+      <div class="solution__item reveal">
+        <div class="solution__item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <h3>Look Established Instantly</h3>
+        <p>A clean, modern site signals that you're a serious, professional operation — not a side hustle. First impressions matter, and yours will be excellent.</p>
+      </div>
+      <div class="solution__item reveal">
+        <div class="solution__item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.1a19.79 19.79 0 0 1-3-8.57A2 2 0 0 1 2.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.91 9.4a16 16 0 0 0 6.68 6.68l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>More Calls, More Leads</h3>
+        <p>Clear service descriptions, a prominent phone number, and a simple contact form mean customers can reach you in seconds — not go searching for an email buried somewhere.</p>
+      </div>
+      <div class="solution__item reveal">
+        <div class="solution__item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Show Up on Google</h3>
+        <p>A proper website helps you rank in local search results so people in your area can actually find you — not just referrals who already have your number.</p>
+      </div>
+      <div class="solution__item reveal">
+        <div class="solution__item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Perfect on Every Phone</h3>
+        <p>Over 70% of searches happen on mobile. Your site will look sharp and load fast on every device so you never lose a lead because of a clunky mobile experience.</p>
+      </div>
+      <div class="solution__item reveal">
+        <div class="solution__item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Build Trust Before They Call</h3>
+        <p>Photos of your work, your services, your service area, and your contact info all in one place. Customers vet you before calling — make that process work in your favor.</p>
+      </div>
+      <div class="solution__item reveal">
+        <div class="solution__item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Zero Work on Your End</h3>
+        <p>We handle design, build, hosting, security, and updates. You text or email us your changes and we take care of the rest. No logins, no dashboards, no tech headaches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────────── -->
+<section class="process section section--alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">The Process</div>
+      <h2>From Request to Live Site — Here's Exactly What Happens</h2>
+      <p class="lead lead--center" style="margin-top:16px">We keep it simple. You stay in control without doing any of the heavy lifting.</p>
+    </div>
+    <div class="process__steps">
+      <div class="process__step reveal">
+        <div class="process__step-num">1</div>
+        <h3>Request Your Free Mock-Up</h3>
+        <p>Fill out a quick form — tell us your business name, what you do, and your service area. That's all we need to start designing.</p>
+        <div class="process__free-badge">100% Free</div>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__step-num">2</div>
+        <h3>We Deliver Your Personalized Mock-Up</h3>
+        <p>Within about a week or less, you get a private preview of your homepage — designed around your actual business, services, and area.</p>
+        <div class="process__time-badge">~1 Week or Less</div>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__step-num">3</div>
+        <h3>Love It? Sign Up &amp; We Build the Rest</h3>
+        <p>If you're happy with the direction, sign a simple agreement and pay your first month's hosting fee. No commitment before this point.</p>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__step-num">4</div>
+        <h3>Full Site Goes Live</h3>
+        <p>We build and launch your complete site in 1 week or less. More complex multi-page builds may take up to 2 weeks — we'll let you know upfront.</p>
+        <div class="process__time-badge">1–2 Weeks</div>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__step-num">5</div>
+        <h3>We Handle Everything After</h3>
+        <p>Need a change? Just text or email us. Your site stays current without you ever logging into a thing.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px" class="reveal">
+      <a href="#mock-up" class="btn btn-primary btn-lg">Start With My Free Mock-Up →</a>
+      <p style="margin-top:14px;font-size:.88rem;color:var(--text-muted)">No commitment. No credit card. No tech knowledge required.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ──────────────────────────────────────────────── -->
+<section class="portfolio section section--cream-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Our Work</div>
+      <h2>Clean, Professional Sites Built for Real Businesses</h2>
+      <p class="lead lead--center" style="margin-top:16px">Every site is custom-designed around your actual services and service area — not a generic template dropped in with your name swapped out.</p>
+    </div>
+    <div class="portfolio__grid">
+      <div class="portfolio__card reveal">
+        <div class="portfolio__img" style="background:#373737">
+          <img src="images/portfolio-hill-country.jpg" alt="Hill Country Patio Pros — website design by CODEX BizOps">
+          <span>Outdoor Structures</span>
+        </div>
+        <div class="portfolio__info">
+          <div class="portfolio__type">Home &amp; Outdoor Services</div>
+          <div class="portfolio__title">Hill Country Patio Pros</div>
+          <div class="portfolio__desc">Clean service pages, a project gallery, and a prominent quote request form — built for a pergola and patio installer serving the Texas Hill Country.</div>
+        </div>
+      </div>
+      <div class="portfolio__card reveal">
+        <div class="portfolio__img" style="background:#0f0f0f">
+          <img src="images/portfolio-trinity.jpg" alt="Trinity Bookkeeping — website design by CODEX BizOps">
+          <span>Finance</span>
+        </div>
+        <div class="portfolio__info">
+          <div class="portfolio__type">Professional Services</div>
+          <div class="portfolio__title">Trinity Bookkeeping</div>
+          <div class="portfolio__desc">A premium dark-themed site for a bookkeeping firm — professional service breakdown, trust signals, and a clean lead capture form that converts.</div>
+        </div>
+      </div>
+      <div class="portfolio__card reveal">
+        <div class="portfolio__img" style="background:#0d1b2a">
+          <img src="images/portfolio-education.jpg" alt="CODEX Educational Platform — website design by CODEX BizOps">
+          <span>Education</span>
+        </div>
+        <div class="portfolio__info">
+          <div class="portfolio__type">Online Education</div>
+          <div class="portfolio__title">CODEX Educational Platform</div>
+          <div class="portfolio__desc">A polished course portal with a modern dark aesthetic — built for an online education provider with course listings and a streamlined enrollment flow.</div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio__note reveal">
+      <p><strong>Your business is next.</strong> Send us your business info and we'll show you what your site could look like — for free, with no obligation to move forward.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PACKAGES ───────────────────────────────────────────────── -->
+<section class="packages section" id="packages">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Pricing</div>
+      <h2>Simple, Honest Pricing. No Surprises.</h2>
+      <p class="lead lead--center" style="margin-top:16px">Design and build is always free. Choose the monthly plan that fits your business — and cancel anytime.</p>
+    </div>
+    <div class="packages__promo reveal">
+      ✦ <strong>Summer Promotion:</strong> $0 Setup &amp; Build Fee on all plans. Your site designed and built at no upfront cost. You only pay when you go live.
+    </div>
+    <div class="packages__grid reveal">
+
+      <!-- CODEX PRO -->
+      <div class="package-card">
+        <div class="package-card__head">
+          <div class="package-card__name">CODEX Pro</div>
+          <div class="package-card__price">
+            <span class="package-card__price-num">$99</span>
+            <span class="package-card__price-period">/month</span>
+          </div>
+          <div class="package-card__savings">Save $60 on Annual Plan</div>
+          <div class="package-card__tagline">Perfect for establishing a clean, professional online presence that builds trust and brings in leads.</div>
+        </div>
+        <div class="package-card__promo">✦ $0 Setup &amp; Build Fee — Summer Promotion</div>
+        <div class="package-card__features">
+          <div class="package-card__feature">
+            <div class="package-card__feature-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Up to 3 Custom Designed Pages</strong><span>Home, Services, and Contact — built around your actual business.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Premium Web Hosting &amp; Security</strong><span>Fast, reliable hosting with SSL certificate included. Your site stays online, always.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Mobile-Optimized Design</strong><span>Looks sharp and loads fast on every phone, tablet, and desktop.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Hands-Free Monthly Site Updates</strong><span>Just text or email us your changes — new hours, new photos, updated pricing — and we handle it for you.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Reliable Support Included</strong><span>Real people who respond when you reach out.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>No Long-Term Contracts</strong><span>Cancel anytime. No penalties, no fine print.</span></div>
+          </div>
+        </div>
+        <div class="package-card__footer">
+          <a href="#mock-up" class="btn btn-secondary btn-block">Choose Pro — Free Build →</a>
+          <p class="card-skip">Already decided? <a href="contact.html?ready=1&plan=pro">Skip the mock-up →</a></p>
+        </div>
+      </div>
+
+      <!-- CODEX ELITE -->
+      <div class="package-card package-card--elite">
+        <div class="package-card__badge">Most Popular — Best Value</div>
+        <div class="package-card__head">
+          <div class="package-card__name package-card__name--elite">CODEX Elite</div>
+          <div class="package-card__price">
+            <span class="package-card__price-num">$129</span>
+            <span class="package-card__price-period">/month</span>
+          </div>
+          <div class="package-card__savings" style="color:var(--gold-dark)">Save $120 on Annual Plan</div>
+          <div class="package-card__tagline">Everything in Pro, plus the tools that help you get more leads and make sure you never miss a single customer.</div>
+        </div>
+        <div class="package-card__promo package-card__promo--gold">✦ $0 Setup &amp; Build Fee — Summer Promotion</div>
+        <div class="package-card__features">
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Everything in CODEX Pro</strong><span>All Pro features included — hosting, mobile design, hands-free updates, reliable support, no contracts.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Up to 10 Custom Designed Pages</strong><span>Expand your site as your business grows — service detail pages, about, gallery, testimonials, and more.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Instant Lead Notification Automation</strong><span>New leads trigger instant alerts to you and an automatic reply to them — so every inquiry feels handled from the first second, even at 2am.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Instant Text &amp; Email Alerts</strong><span>Client messages go straight to your phone immediately so you never miss a customer request, no matter where you are on the job.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Priority Support &amp; Fast-Track Updates</strong><span>Jump to the front of the line for any edits or image swaps with a guaranteed quick turnaround.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>10% Discount on Business Boosters</strong><span>Stack on growth tools at a discounted rate as your business scales.</span></div>
+          </div>
+          <div class="package-card__feature">
+            <div class="package-card__feature-check package-card__feature-check--gold"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>No Long-Term Contracts</strong><span>Cancel anytime. No penalties, no fine print.</span></div>
+          </div>
+        </div>
+        <div class="package-card__footer">
+          <a href="#mock-up" class="btn btn-primary btn-block">Choose Elite — Free Build →</a>
+          <p class="card-skip">Already decided? <a href="contact.html?ready=1&plan=elite">Skip the mock-up →</a></p>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px" class="reveal">
+      <p style="color:var(--text-muted);font-size:.9rem">Not sure which plan is right for you? <a href="contact.html" style="color:var(--sage);font-weight:600;text-decoration:underline">Send us a message</a> and we'll figure it out together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOSTERS ───────────────────────────────────────────────── -->
+<section class="boosters section section--alt" id="boosters">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Optional Add-Ons</div>
+      <h2>Business Boosters — Grow When You're Ready</h2>
+      <p class="lead lead--center" style="margin-top:16px;margin-bottom:52px">Your website is the foundation. When you're ready to go further, these tools plug right in — no extra tech headaches.</p>
+    </div>
+    <div class="boosters__grid">
+      <div class="booster-card reveal">
+        <div class="booster-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <h3>Automated Lead Protection</h3>
+        <p>Never miss a call again. When a customer calls and you can't answer, they get an instant automatic text reply — keeping the lead warm until you call back. Includes a dedicated business number so your personal cell stays private.</p>
+        <div class="booster-card__label">A La Carte Add-On</div>
+      </div>
+      <div class="booster-card reveal">
+        <div class="booster-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Smart Booking Tool</h3>
+        <p>Let customers book appointments or consultations right from your website — 24/7, no phone tag required. Your calendar syncs automatically and you get a notification the moment something is booked.</p>
+        <div class="booster-card__label">A La Carte Add-On</div>
+      </div>
+      <div class="booster-card reveal">
+        <div class="booster-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Google Profile Optimization</h3>
+        <p>Rank higher on Google Maps and local search results so more customers in your area find you first. Most small businesses leave serious visibility on the table here — we close that gap for you.</p>
+        <div class="booster-card__label">A La Carte Add-On</div>
+      </div>
+      <div class="booster-card reveal">
+        <div class="booster-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Automated Review Requests</h3>
+        <p>After every job, your satisfied customers automatically get a simple text or email making it easy to leave you a Google review. More reviews, better ranking, more trust — without you lifting a finger.</p>
+        <div class="booster-card__label">A La Carte Add-On</div>
+      </div>
+      <div class="booster-card reveal">
+        <div class="booster-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>"Never-Miss-A-Lead" Chat</h3>
+        <p>A simple chat button on your website that connects straight to your phone. Visitors who aren't ready to call can message you directly — and you reply right from your texts, just like any message.</p>
+        <div class="booster-card__label">A La Carte Add-On</div>
+      </div>
+      <div class="booster-card reveal">
+        <div class="booster-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Dedicated Business Line</h3>
+        <p>A professional business number separate from your personal cell. Call forwarding, voicemail transcription, and texting all included — so you look established without paying for a second phone.</p>
+        <div class="booster-card__label">A La Carte Add-On</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <p style="color:var(--text-muted);font-size:.92rem">Elite plan subscribers get <strong style="color:var(--navy)">10% off all add-ons</strong>. Ask us about bundling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON ─────────────────────────────────────────────── -->
+<section class="compare section section--cream-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Why CODEX?</div>
+      <h2>You've Got Options. Here's the Honest Comparison.</h2>
+      <p class="lead lead--center" style="margin-top:16px">Traditional agencies are expensive and slow. DIY builders mean you're still doing all the work. CODEX gives you a professional result without either headache.</p>
+    </div>
+    <div class="compare__table reveal">
+      <div class="compare__row compare__row--head">
+        <div class="compare__cell">What You're Comparing</div>
+        <div class="compare__cell">Traditional Agency</div>
+        <div class="compare__cell">CODEX BizOps</div>
+        <div class="compare__cell">DIY Builder</div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell">Upfront build cost</div>
+        <div class="compare__cell compare__x">$2,000–$10,000+</div>
+        <div class="compare__cell compare__star">$0 — Free</div>
+        <div class="compare__cell">"Free" (your time)</div>
+      </div>
+      <div class="compare__row compare__row--alt">
+        <div class="compare__cell">Monthly cost</div>
+        <div class="compare__cell">$200–$500+</div>
+        <div class="compare__cell compare__star">$99–$129</div>
+        <div class="compare__cell">$16–$50 + your time</div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell">Time to launch</div>
+        <div class="compare__cell compare__x">2–6 months</div>
+        <div class="compare__cell compare__star">1–2 weeks</div>
+        <div class="compare__cell compare__x">Whenever you finish</div>
+      </div>
+      <div class="compare__row compare__row--alt">
+        <div class="compare__cell">Ongoing updates</div>
+        <div class="compare__cell compare__x">Pay per hour</div>
+        <div class="compare__cell compare__star">Included — text us</div>
+        <div class="compare__cell compare__x">You do it yourself</div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell">Tech knowledge needed</div>
+        <div class="compare__cell compare__check">No</div>
+        <div class="compare__cell compare__star">Zero</div>
+        <div class="compare__cell compare__x">Yes — frustrating</div>
+      </div>
+      <div class="compare__row compare__row--alt">
+        <div class="compare__cell">Contract required</div>
+        <div class="compare__cell compare__x">Often 1–2 years</div>
+        <div class="compare__cell compare__star">None — cancel anytime</div>
+        <div class="compare__cell compare__check">No</div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell">Professional result</div>
+        <div class="compare__cell compare__check">Yes</div>
+        <div class="compare__cell compare__star">Yes</div>
+        <div class="compare__cell compare__x">Depends on your skills</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────────── -->
+<section class="faq section section--alt" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Common Questions</div>
+      <h2>Everything You're Probably Wondering</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq__item">
+        <button class="faq__q">Do I really need a website if most of my business comes from word-of-mouth and referrals?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><strong>Yes — and it will make your word-of-mouth work even harder.</strong> When someone gets your name from a friend or sees your truck, the very first thing they do is Google you. If they find nothing, or something outdated, they question whether you're still in business, still professional, or still worth calling. A clean website validates every referral you get. It doesn't replace word-of-mouth — it completes it.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Do I need any technical knowledge or experience to work with CODEX?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><strong>Absolutely none.</strong> You will never need to log into a website builder, deal with domain settings, or figure out hosting. You give us your business info and we handle everything from design to launch. After your site goes live, if you need a change — new photos, updated hours, a new service — just text or email us and we take care of it. You run your business. We run your website.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">How long does the whole process take?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Your personalized homepage mock-up is typically delivered <strong>within about a week or less</strong>. If you're happy with the direction, you sign a simple agreement and pay your first month — then we build out your full site and launch it within <strong>1 week or less</strong>. More complex builds with many pages may take up to 2 weeks, and we'll tell you upfront if that's the case. Start to finish, you're typically live within 2–3 weeks.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">If the design and build is free, what exactly am I paying for monthly?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Your monthly fee covers <strong>premium web hosting, your SSL security certificate, ongoing site maintenance, hands-free updates, and reliable support</strong>. The design and build work we do upfront is our investment in you as a long-term client. We do the hard work for free because we're confident you'll see the value month after month.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">What if I want to make changes to the site after it goes live?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner">That's exactly what the monthly plan includes. <strong>Just text or email us your changes</strong> — updated service descriptions, new photos, a seasonal promotion, a new service area — and we handle the update for you. You never need to touch the site. Elite plan clients get priority handling with a guaranteed fast turnaround.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Is there a contract? What happens if I want to cancel?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><strong>No long-term contracts. Ever.</strong> You can cancel at any time with no penalties and no hidden fees. We operate month-to-month because we believe in earning your business every month — not locking you in. If you cancel, your site comes down at the end of your billing period. No drama, no runaround, no fees.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Will my site work on mobile phones?<span class="faq__arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><strong>Yes — it's built mobile-first.</strong> More than 70% of your potential customers will find and visit your site on a smartphone. Every site we build is designed to look sharp and load fast on every phone, tablet, and desktop screen size. No pinching, no zooming, no broken layouts — on every device, from day one.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA / FORM ────────────────────────────────────────── -->
+<section class="final-cta" id="mock-up">
+  <div class="container">
+    <div class="final-cta__inner reveal">
+      <div class="eyebrow eyebrow--white" style="text-align:center">Ready to Get Started?</div>
+      <h2>See What Your Business Could Look Like Online — For Free</h2>
+      <p class="lead" style="color:rgba(255,255,255,.75);text-align:center">No commitment. No credit card. No tech knowledge required. Fill out the form below and we'll have a personalized homepage mock-up ready for you in about a week.</p>
+
+      <div class="final-cta__form-box">
+        <iframe
+          src="https://go.codexbizops.com/widget/form/wmZKZsUPnVDXYVn0L4Xy"
+          style="width:100%;height:1234px;border:none;border-radius:8px"
+          id="inline-wmZKZsUPnVDXYVn0L4Xy"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="See Your Free Mockup"
+          data-height="1234"
+          data-layout-iframe-id="inline-wmZKZsUPnVDXYVn0L4Xy"
+          data-form-id="wmZKZsUPnVDXYVn0L4Xy"
+          title="See Your Free Mockup">
+        </iframe>
+      </div>
+
+      <p class="final-cta__questions">Have questions first? <a href="contact.html">Send us a message →</a></p>
+
+      <div class="final-cta__trust">
+        <div class="final-cta__trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Design &amp; build free
+        </div>
+        <div class="final-cta__trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Mock-up in ~1 week
+        </div>
+        <div class="final-cta__trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No long-term contract
+        </div>
+        <div class="final-cta__trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Cancel anytime
+        </div>
+        <div class="final-cta__trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No hidden fees
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+        <img src="images/logo-white.png" alt="CODEX BizOps" style="height:72px;width:auto;display:block">
+      </a>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#packages">Pricing</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 CODEX Business Operations. All rights reserved.</p>
+      <p class="footer__scripture">&quot;I can do all things through Christ who strengthens me.&quot; &mdash; Philippians 4:13</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SCRIPTS ─────────────────────────────────────────────────── -->
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq__q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq__item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// GHL form resize handler
+window.addEventListener('message', e => {
+  if (e.data && e.data.type === 'form_height') {
+    const iframe = document.getElementById('inline-wmZKZsUPnVDXYVn0L4Xy');
+    if (iframe) iframe.style.height = e.data.height + 'px';
+  }
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script src="https://go.codexbizops.com/js/form_embed.js"></script>
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('navLinks');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+  menu.querySelectorAll('.nav__link').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+})();
+</script>
+<script>
+// Smart nav — hide on scroll down, reveal on scroll up
+(function(){
+  var nav = document.querySelector('.nav');
+  if(!nav) return;
+  var lastY = 0, threshold = 80;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y <= threshold){
+      nav.classList.remove('nav--hidden');
+    } else if(y > lastY){
+      nav.classList.add('nav--hidden');
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+    lastY = y;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>

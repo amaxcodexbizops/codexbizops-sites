@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Do not index thank-you pages
+Disallow: /thank-you-mockup.html
+Disallow: /thank-you-contact.html
+
+# Sitemap
+Sitemap: https://sites.codexbizops.com/sitemap.xml

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CODEX BizOps</title>
+<meta name="description" content="Privacy Policy for CODEX Business Operations — how we collect, use, and protect your information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1E1E1E;background:#F8F5EE;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --navy:#373737;
+  --navy-light:#454545;
+  --cream:#F8F5EE;
+  --cream-dark:#F0ECE3;
+  --white:#FFFFFF;
+  --sage:#1A3058;
+  --gold:#c0b283;
+  --gold-dark:#a09070;
+  --gold-light:#d4c8a0;
+  --text:#1E1E1E;
+  --text-muted:#4A4A4A;
+  --border:#DDD8CE;
+  --shadow-sm:0 2px 8px rgba(55,55,55,.08);
+  --radius:12px;
+  --radius-lg:20px;
+}
+
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25}
+h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:800}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;transition:top .3s ease;background:rgba(55,55,55,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav--hidden{top:-120px}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto}
+.nav{position:relative}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__link{color:rgba(255,255,255,.65);font-size:.88rem;font-weight:500;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav__link:hover{color:#fff}
+.nav .btn{padding:9px 20px;font-size:.87rem;border-radius:7px}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav__hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:all .3s ease}
+.nav__hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.nav__hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .nav__hamburger{display:flex}
+  .nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:#373737;flex-direction:column;align-items:stretch;padding:8px 24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:99}
+  .nav__links.open{display:flex}
+  .nav__link{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem;color:rgba(255,255,255,.75)}
+  .nav__link:last-of-type{border-bottom:none}
+  .nav .btn{margin-top:14px;width:100%;justify-content:center;padding:13px 20px;font-size:.95rem}
+}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap}
+.btn-primary{background:var(--gold);color:#373737;box-shadow:0 4px 16px rgba(192,178,131,.3)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:64px 0 52px}
+.page-hero__eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px}
+.page-hero h1{color:#fff;margin-bottom:12px}
+.page-hero__meta{color:rgba(255,255,255,.5);font-size:.88rem}
+
+/* ── LAYOUT ── */
+.policy-wrap{display:grid;grid-template-columns:240px 1fr;gap:64px;padding:72px 0 96px;align-items:start}
+
+/* Sidebar TOC */
+.toc{position:sticky;top:88px}
+.toc__title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+.toc__list{list-style:none}
+.toc__item{margin-bottom:4px}
+.toc__link{display:block;font-size:.83rem;color:var(--text-muted);padding:5px 10px;border-left:2px solid var(--border);transition:all .15s}
+.toc__link:hover{color:var(--navy);border-left-color:var(--navy);background:rgba(55,55,55,.04)}
+.toc__link.active{color:var(--navy);border-left-color:var(--gold);font-weight:600}
+
+/* Content */
+.policy-content{background:var(--white);border-radius:var(--radius-lg);padding:52px 56px;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.policy-content section{margin-bottom:52px;scroll-margin-top:100px}
+.policy-content section:last-child{margin-bottom:0}
+.policy-section-num{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.policy-content h2{font-size:1.45rem;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.policy-content h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px;margin-top:24px}
+.policy-content p{color:var(--text-muted);margin-bottom:16px;font-size:.95rem}
+.policy-content ul{color:var(--text-muted);font-size:.95rem;padding-left:20px;margin-bottom:16px}
+.policy-content ul li{margin-bottom:8px;padding-left:4px}
+.policy-content strong{color:var(--navy);font-weight:600}
+.policy-content a{color:var(--sage);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.policy-content a:hover{color:var(--navy)}
+
+/* Info box */
+.info-box{background:#EFF6FF;border:1px solid rgba(59,130,246,.2);border-left:4px solid #3B82F6;border-radius:8px;padding:16px 20px;margin-bottom:16px;font-size:.9rem;color:#1E3A5F}
+.info-box strong{color:#1E3A5F}
+
+/* Warn box */
+.warn-box{background:#FEF9EC;border:1px solid rgba(192,178,131,.3);border-left:4px solid var(--gold);border-radius:8px;padding:16px 20px;margin-bottom:16px;font-size:.9rem;color:#5C4A1A}
+.warn-box strong{color:#7A5E10}
+
+/* ── FOOTER ── */
+.footer{background:#242424;padding:48px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer__top{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+.footer__links{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.footer__links a{color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s;white-space:nowrap}
+.footer__links a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center}
+.footer__copy{color:rgba(255,255,255,.35);font-size:.8rem;margin-bottom:10px}
+.footer__scripture{color:rgba(255,255,255,.22);font-size:.75rem;font-style:italic}
+@media(max-width:640px){
+  .footer__top{flex-direction:column;align-items:flex-start;gap:24px}
+  .footer__links{gap:16px}
+}
+
+@media(max-width:900px){
+  .policy-wrap{grid-template-columns:1fr}
+  .toc{display:none}
+  .policy-content{padding:32px 24px}
+}
+@media(max-width:640px){
+  .page-hero{padding:48px 0 40px}
+  .policy-content{padding:24px 16px}
+}
+</style>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/favicon-192.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CODEX BizOps">
+<meta property="og:title" content="Privacy Policy | CODEX BizOps">
+<meta property="og:description" content="How CODEX Business Operations collects, uses, and protects your personal information.">
+<meta property="og:image" content="https://codexbizops.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://codexbizops.com/privacy.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy | CODEX BizOps">
+<meta name="twitter:description" content="How CODEX Business Operations collects, uses, and protects your personal information.">
+<meta name="twitter:image" content="https://codexbizops.com/images/og-image.jpg">
+</head>
+<body>
+
+<nav class="nav">
+      <div class="nav__inner">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="images/logo-white.png" alt="CODEX BizOps" style="height:80px;width:auto;display:block">
+    </a>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="index.html#packages" class="nav__link">Pricing</a>
+      <a href="index.html#faq" class="nav__link">FAQs</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="index.html#mock-up" class="btn btn-primary">Get Free Mock-Up</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="page-hero__meta">Last Updated: July 24, 2026 &nbsp;·&nbsp; CODEX Business Operations</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="policy-wrap">
+
+    <!-- Sidebar TOC -->
+    <aside class="toc">
+      <div class="toc__title">On This Page</div>
+      <ul class="toc__list">
+        <li class="toc__item"><a href="#overview" class="toc__link">1. Overview</a></li>
+        <li class="toc__item"><a href="#information-we-collect" class="toc__link">2. Information We Collect</a></li>
+        <li class="toc__item"><a href="#how-we-use" class="toc__link">3. How We Use Your Information</a></li>
+        <li class="toc__item"><a href="#cookies-tracking" class="toc__link">4. Cookies &amp; Tracking</a></li>
+        <li class="toc__item"><a href="#third-parties" class="toc__link">5. Third-Party Services</a></li>
+        <li class="toc__item"><a href="#marketing" class="toc__link">6. Marketing Communications</a></li>
+        <li class="toc__item"><a href="#sharing" class="toc__link">7. Data Sharing</a></li>
+        <li class="toc__item"><a href="#retention" class="toc__link">8. Data Retention</a></li>
+        <li class="toc__item"><a href="#age" class="toc__link">9. Age Requirements</a></li>
+        <li class="toc__item"><a href="#your-rights" class="toc__link">10. Your Privacy Rights</a></li>
+        <li class="toc__item"><a href="#security" class="toc__link">11. Data Security</a></li>
+        <li class="toc__item"><a href="#changes" class="toc__link">12. Policy Changes</a></li>
+        <li class="toc__item"><a href="#contact" class="toc__link">13. Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="policy-content">
+
+      <section id="overview">
+        <div class="policy-section-num">Section 1</div>
+        <h2>Overview</h2>
+        <p>CODEX Business Operations ("CODEX BizOps," "we," "us," or "our") operates the website located at codexbizops.com (the "Site"). We provide professional website design, hosting, and management services for small business owners across the United States.</p>
+        <p>This Privacy Policy explains what information we collect when you visit our Site or submit a form, how we use and protect that information, and what choices you have. By using this Site, you agree to the practices described in this policy.</p>
+        <div class="info-box"><strong>Plain English Summary:</strong> We collect the information you give us through our forms, use analytics and advertising tools to understand how people find us, and only contact you with marketing if you opt in. We don't sell your data. Ever.</div>
+      </section>
+
+      <section id="information-we-collect">
+        <div class="policy-section-num">Section 2</div>
+        <h2>Information We Collect</h2>
+
+        <h3>Information You Provide Directly</h3>
+        <p>When you fill out a form on our Site — including our free mock-up request form or contact form — we may collect the following:</p>
+        <ul>
+          <li>Full name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Business name</li>
+          <li>Business type or industry</li>
+          <li>Service area or location</li>
+          <li>Any other information you voluntarily include in a message or form field</li>
+        </ul>
+        <p>Providing this information is voluntary. However, certain fields are required to process your mock-up request or respond to your inquiry.</p>
+
+        <h3>Information Collected Automatically</h3>
+        <p>When you visit our Site, certain information is collected automatically through cookies and similar technologies, including:</p>
+        <ul>
+          <li>IP address and approximate geographic location</li>
+          <li>Browser type and version</li>
+          <li>Device type and operating system</li>
+          <li>Pages visited and time spent on each page</li>
+          <li>Referring URL (how you found our site)</li>
+          <li>Clicks, scrolls, and other interaction data</li>
+        </ul>
+      </section>
+
+      <section id="how-we-use">
+        <div class="policy-section-num">Section 3</div>
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+          <li><strong>To respond to your inquiry</strong> — We use your contact details to follow up on mock-up requests, answer questions, and communicate about our services.</li>
+          <li><strong>To deliver our services</strong> — Once you become a client, we use your business information to design and manage your website.</li>
+          <li><strong>To send marketing communications</strong> — Only if you have opted in, we may send you promotional emails or text messages about our services, offers, and updates. See Section 6 for more detail.</li>
+          <li><strong>To analyze and improve our Site</strong> — We use analytics data to understand how visitors use our Site so we can improve it.</li>
+          <li><strong>To run advertising campaigns</strong> — We may use data collected through cookies and tracking tools to serve relevant ads on platforms like Google and Facebook.</li>
+          <li><strong>To comply with legal obligations</strong> — We may retain and use your information as required by applicable law.</li>
+        </ul>
+      </section>
+
+      <section id="cookies-tracking">
+        <div class="policy-section-num">Section 4</div>
+        <h2>Cookies &amp; Tracking Technologies</h2>
+        <p>We use cookies and similar tracking technologies on our Site. Cookies are small text files stored on your device that help us recognize you and understand how you interact with our content.</p>
+
+        <h3>Types of Cookies We Use</h3>
+        <ul>
+          <li><strong>Essential cookies</strong> — Required for the Site to function properly. These cannot be disabled.</li>
+          <li><strong>Analytics cookies</strong> — We use Google Analytics to understand visitor behavior, traffic sources, and usage patterns. This data is aggregated and anonymized where possible. You can opt out of Google Analytics tracking at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a>.</li>
+          <li><strong>Advertising cookies</strong> — We may use cookies from Google Ads and Facebook (Meta) to measure the effectiveness of our advertising campaigns and to show relevant ads to people who have visited our Site. These platforms may combine this data with other information they have collected about you.</li>
+          <li><strong>CRM &amp; form tracking cookies</strong> — Our forms are powered by GoHighLevel (GHL), which may use its own cookies to track form interactions and attribute leads.</li>
+        </ul>
+
+        <h3>Managing Cookies</h3>
+        <p>You can control cookies through your browser settings. Most browsers allow you to refuse new cookies, delete existing cookies, or be notified when a cookie is set. Note that disabling certain cookies may affect the functionality of our Site.</p>
+        <p>For advertising opt-outs, you can also visit <a href="https://optout.aboutads.info" target="_blank" rel="noopener">optout.aboutads.info</a> or the <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener">Network Advertising Initiative opt-out page</a>.</p>
+      </section>
+
+      <section id="third-parties">
+        <div class="policy-section-num">Section 5</div>
+        <h2>Third-Party Services</h2>
+        <p>We use the following third-party services that may collect or process your information on our behalf. Each operates under its own privacy policy.</p>
+
+        <h3>GoHighLevel (GHL)</h3>
+        <p>Our forms, contact management, and marketing automation are powered by GoHighLevel. When you submit a form on our Site, your information is stored and processed within the GHL platform. GHL may also use cookies and tracking pixels on our Site. Review GHL's privacy practices at <a href="https://www.gohighlevel.com/privacy-policy" target="_blank" rel="noopener">gohighlevel.com/privacy-policy</a>.</p>
+
+        <h3>Google Analytics</h3>
+        <p>We use Google Analytics to analyze Site traffic and usage. Google may collect and process data in accordance with its own policies. Learn more at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+        <h3>Google Ads</h3>
+        <p>We may run advertising campaigns through Google Ads, which uses cookies and other tracking methods to measure ad performance and serve relevant ads. Review Google's ad privacy settings at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
+
+        <h3>Meta (Facebook) Ads</h3>
+        <p>We may use Meta's advertising tools, including the Meta Pixel, to measure the effectiveness of our Facebook and Instagram ads and to build audiences for future campaigns. Review Meta's data policy at <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a>.</p>
+
+        <div class="warn-box"><strong>Note:</strong> We do not sell, rent, or trade your personal information to any third party. The third-party services listed above receive your data solely to provide services on our behalf or to power our advertising and analytics efforts.</div>
+      </section>
+
+      <section id="marketing">
+        <div class="policy-section-num">Section 6</div>
+        <h2>Marketing Communications</h2>
+
+        <h3>Email Marketing</h3>
+        <p>We may send you promotional emails about our services, special offers, or relevant updates — but only if you have explicitly opted in to receive them. Every marketing email we send will include a clear and easy way to unsubscribe. Opting out will not affect your ability to receive transactional messages related to an active service agreement.</p>
+
+        <h3>SMS / Text Message Marketing</h3>
+        <p>We may send promotional text messages to your mobile number if you have provided express written consent to receive SMS marketing from CODEX BizOps. Message and data rates may apply. Message frequency will vary. You may opt out at any time by replying <strong>STOP</strong> to any message you receive from us. For help, reply <strong>HELP</strong> or contact us at <a href="contact.html">our contact form</a>.</p>
+        <p>We do not share your phone number with third parties for their own marketing purposes.</p>
+
+        <h3>Transactional Communications</h3>
+        <p>Regardless of your marketing preferences, we may contact you with messages that are necessary to fulfill our services — such as responding to your inquiry, delivering your mock-up, or communicating about your active account. These are not marketing messages and are not subject to opt-out.</p>
+      </section>
+
+      <section id="sharing">
+        <div class="policy-section-num">Section 7</div>
+        <h2>Data Sharing &amp; Disclosure</h2>
+        <p>We do not sell your personal information. We may share your information only in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Service providers</strong> — We share data with third-party tools (GoHighLevel, Google, Meta) that help us operate our business, as described in Section 5. These providers are contractually required to protect your data and use it only for the purposes we specify.</li>
+          <li><strong>Legal compliance</strong> — We may disclose your information if required to do so by law, court order, or valid governmental request, or to protect the rights, property, or safety of CODEX BizOps, our clients, or others.</li>
+          <li><strong>Business transfers</strong> — In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you if your data becomes subject to a materially different privacy policy as a result.</li>
+        </ul>
+      </section>
+
+      <section id="retention">
+        <div class="policy-section-num">Section 8</div>
+        <h2>Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, maintain our business records, and comply with our legal obligations.</p>
+        <ul>
+          <li><strong>Inquiry and lead data</strong> — Retained in GHL for as long as your account is active or until you request deletion.</li>
+          <li><strong>Client data</strong> — Retained for the duration of the service relationship and for a reasonable period afterward as required by law or for legitimate business purposes.</li>
+          <li><strong>Analytics data</strong> — Retained per Google Analytics default settings (typically 26 months).</li>
+        </ul>
+        <p>You may request deletion of your personal data at any time by contacting us at <a href="contact.html">our contact form</a>. We will honor deletion requests to the extent permitted by law and consistent with our operational and legal obligations.</p>
+      </section>
+
+      <section id="age">
+        <div class="policy-section-num">Section 9</div>
+        <h2>Age Requirements</h2>
+        <p>Our services are intended for individuals who are <strong>18 years of age or older</strong>. We do not knowingly collect personal information from individuals under the age of 18 without verified parental or guardian involvement.</p>
+        <p>If a minor under the age of 18 wishes to use our services, a parent or legal guardian must be the account holder, must complete all forms and agreements on the minor's behalf, and must be the primary point of contact for all business communications.</p>
+        <p>If you believe we have inadvertently collected information from a minor without appropriate parental consent, please contact us immediately at <a href="contact.html">our contact form</a> and we will take prompt steps to remove that information.</p>
+      </section>
+
+      <section id="your-rights">
+        <div class="policy-section-num">Section 10</div>
+        <h2>Your Privacy Rights</h2>
+
+        <h3>General Rights</h3>
+        <p>Regardless of where you are located, you have the right to:</p>
+        <ul>
+          <li>Request access to the personal information we hold about you</li>
+          <li>Request correction of inaccurate information</li>
+          <li>Request deletion of your personal information (subject to legal limitations)</li>
+          <li>Opt out of marketing communications at any time</li>
+          <li>Ask questions about how your data is used</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="contact.html">our contact form</a>. We will respond within a reasonable timeframe and no later than 30 days.</p>
+
+        <h3>California Residents (CCPA)</h3>
+        <p>If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect, the right to delete your personal information, and the right to opt out of the sale of your personal information.</p>
+        <p><strong>We do not sell personal information.</strong> To submit a CCPA request or learn more about your California privacy rights, contact us at <a href="contact.html">our contact form</a>. We will not discriminate against you for exercising your privacy rights.</p>
+      </section>
+
+      <section id="security">
+        <div class="policy-section-num">Section 11</div>
+        <h2>Data Security</h2>
+        <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, or disclosure. Our forms are delivered over HTTPS, and data stored within GoHighLevel is subject to GHL's own security practices and safeguards.</p>
+        <p>However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security. If you have reason to believe that your interaction with us is no longer secure, please notify us immediately at <a href="contact.html">our contact form</a>.</p>
+      </section>
+
+      <section id="changes">
+        <div class="policy-section-num">Section 12</div>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. When we make material changes, we will update the "Last Updated" date at the top of this page.</p>
+        <p>We encourage you to review this policy periodically. Your continued use of our Site after any changes take effect constitutes your acceptance of the updated policy.</p>
+      </section>
+
+      <section id="contact">
+        <div class="policy-section-num">Section 13</div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please reach out to us:</p>
+        <ul>
+          <li><strong>Contact Form:</strong> <a href="contact.html">Use our contact page</a></li>
+          <li><strong>Business:</strong> CODEX Business Operations</li>
+          <li><strong>Jurisdiction:</strong> Texas, United States</li>
+        </ul>
+        <p>We are committed to resolving any privacy concerns promptly and transparently. If you submit a request, we will respond within 30 days.</p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+        <img src="images/logo-white.png" alt="CODEX BizOps" style="height:72px;width:auto;display:block">
+      </a>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#packages">Pricing</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 CODEX Business Operations. All rights reserved.</p>
+      <p class="footer__scripture">&quot;I can do all things through Christ who strengthens me.&quot; &mdash; Philippians 4:13</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// TOC active highlight on scroll
+const sections = document.querySelectorAll('.policy-content section[id]');
+const tocLinks = document.querySelectorAll('.toc__link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.toc__link[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-10% 0px -80% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('navLinks');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+  menu.querySelectorAll('.nav__link').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+})();
+</script>
+<script>
+// Smart nav — hide on scroll down, reveal on scroll up
+(function(){
+  var nav = document.querySelector('.nav');
+  if(!nav) return;
+  var lastY = 0, threshold = 80;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y <= threshold){
+      nav.classList.remove('nav--hidden');
+    } else if(y > lastY){
+      nav.classList.add('nav--hidden');
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+    lastY = y;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>

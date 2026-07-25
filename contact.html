@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — CODEX BizOps</title>
+<meta name="description" content="Have a question or want to schedule a consultation? Reach out to the CODEX BizOps team. We're happy to help.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1E1E1E;background:#F8F5EE;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --navy:#373737;
+  --navy-light:#454545;
+  --cream:#F8F5EE;
+  --cream-dark:#F0ECE3;
+  --white:#FFFFFF;
+  --sage:#1A3058;
+  --sage-light:#2a4878;
+  --gold:#c0b283;
+  --gold-dark:#a09070;
+  --gold-light:#d4c8a0;
+  --text:#1E1E1E;
+  --text-muted:#5C5C5C;
+  --border:#DDD8CE;
+  --shadow-sm:0 2px 8px rgba(55,55,55,.08);
+  --shadow-md:0 6px 24px rgba(55,55,55,.12);
+  --shadow-lg:0 16px 48px rgba(55,55,55,.16);
+  --radius:12px;
+  --radius-lg:20px;
+}
+
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
+h1{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+h2{font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;transition:top .3s ease;background:rgba(55,55,55,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav--hidden{top:-120px}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto}
+.nav__logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:#fff}
+.nav__logo span{color:var(--gold)}
+.nav{position:relative}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__link{color:rgba(255,255,255,.65);font-size:.88rem;font-weight:500;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav__link:hover{color:#fff}
+.nav .btn{padding:9px 20px;font-size:.87rem;border-radius:7px}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav__hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:all .3s ease}
+.nav__hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.nav__hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .nav__hamburger{display:flex}
+  .nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:#373737;flex-direction:column;align-items:stretch;padding:8px 24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:99}
+  .nav__links.open{display:flex}
+  .nav__link{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem;color:rgba(255,255,255,.75)}
+  .nav__link:last-of-type{border-bottom:none}
+  .nav .btn{margin-top:14px;width:100%;justify-content:center;padding:13px 20px;font-size:.95rem}
+}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap}
+.btn-primary{background:var(--gold);color:#373737;box-shadow:0 4px 16px rgba(192,178,131,.3)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:72px 0 60px}
+.page-hero__inner{max-width:600px}
+.page-hero h1{color:#fff;margin-bottom:14px}
+.page-hero p{color:rgba(255,255,255,.7);font-size:1.1rem;line-height:1.7}
+
+/* ── CONTACT LAYOUT ── */
+.contact-section{padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.contact-info h2{color:var(--navy);margin-bottom:16px}
+.contact-info p{color:var(--text-muted);line-height:1.7;margin-bottom:28px;font-size:.95rem}
+.contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.contact-detail__icon{width:44px;height:44px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.contact-detail__text{font-size:.9rem}
+.contact-detail__label{font-weight:600;color:var(--navy);display:block;margin-bottom:2px}
+.contact-detail__value{color:var(--text-muted)}
+.contact-detail__value a{color:var(--sage);font-weight:500}
+.contact-detail__value a:hover{color:var(--navy)}
+
+/* What to expect card */
+.expect-card{margin-top:36px;background:var(--cream-dark);border-radius:var(--radius-lg);padding:24px;border:1px solid var(--border)}
+.expect-card h3{font-size:1rem;color:var(--navy);margin-bottom:14px}
+.expect-item{display:flex;align-items:flex-start;gap:10px;font-size:.875rem;color:var(--text-muted);margin-bottom:10px;line-height:1.55}
+.expect-item svg{flex-shrink:0;color:var(--sage);margin-top:2px}
+
+/* Fast-track banner */
+.fast-track-banner{display:none;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px;border-left:4px solid var(--gold)}
+.fast-track-banner.visible{display:flex;align-items:flex-start;gap:14px}
+.fast-track-banner__icon{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
+.fast-track-banner__icon svg{color:#373737}
+.fast-track-banner__text{flex:1}
+.fast-track-banner__label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.fast-track-banner__msg{font-size:.9rem;color:#fff;line-height:1.5}
+.fast-track-banner__msg strong{color:var(--gold-light)}
+
+/* Form container */
+.form-container{background:var(--white);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-md);border:1px solid var(--border)}
+.form-container h2{color:var(--navy);margin-bottom:8px;font-size:1.5rem}
+.form-container .form-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:28px}
+.ghl-form-placeholder{border:2px dashed var(--border);border-radius:var(--radius);padding:60px 24px;text-align:center;color:var(--text-muted)}
+.ghl-form-placeholder svg{margin:0 auto 12px;opacity:.4}
+.ghl-form-placeholder p{font-size:.9rem;line-height:1.6}
+.ghl-form-placeholder code{font-size:.78rem;background:var(--cream-dark);padding:2px 6px;border-radius:4px;font-family:monospace}
+
+/* ── FOOTER ── */
+.footer{background:#242424;padding:48px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer__top{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+.footer__links{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.footer__links a{color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s;white-space:nowrap}
+.footer__links a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center}
+.footer__copy{color:rgba(255,255,255,.35);font-size:.8rem;margin-bottom:10px}
+.footer__scripture{color:rgba(255,255,255,.22);font-size:.75rem;font-style:italic}
+@media(max-width:640px){
+  .footer__top{flex-direction:column;align-items:flex-start;gap:24px}
+  .footer__links{gap:16px}
+}
+
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:640px){
+  .contact-section{padding:56px 0}
+  .form-container{padding:24px 16px}
+  .page-hero{padding:52px 0 44px}
+}
+</style>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/favicon-192.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CODEX BizOps">
+<meta property="og:title" content="Contact Us | CODEX BizOps">
+<meta property="og:description" content="Have questions about our website design and hosting services? Reach out to the CODEX BizOps team — real people who respond within one business day.">
+<meta property="og:image" content="https://codexbizops.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://codexbizops.com/contact.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Us | CODEX BizOps">
+<meta name="twitter:description" content="Have questions about our website design and hosting services? Reach out to the CODEX BizOps team — real people who respond within one business day.">
+<meta name="twitter:image" content="https://codexbizops.com/images/og-image.jpg">
+</head>
+<body>
+
+<nav class="nav">
+      <div class="nav__inner">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="images/logo-white.png" alt="CODEX BizOps" style="height:80px;width:auto;display:block">
+    </a>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="index.html#packages" class="nav__link">Pricing</a>
+      <a href="index.html#faq" class="nav__link">FAQs</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="index.html#mock-up" class="btn btn-primary">Get Free Mock-Up</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="eyebrow" style="color:var(--gold)">Get in Touch</div>
+      <h1>Have Questions? We're Here.</h1>
+      <p>Whether you want to learn more before committing, need help choosing a plan, or just have a quick question — fill out the form and we'll get back to you.</p>
+    </div>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <div class="eyebrow">Contact Info</div>
+        <h2>We're Real People Who Actually Respond</h2>
+        <p>No chatbot, no ticket queue, no runaround. Submit the form and we'll follow up within one business day.</p>
+
+
+        <div class="expect-card">
+          <h3>What happens when you submit?</h3>
+          <div class="expect-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            We receive your message and review it within one business day.
+          </div>
+          <div class="expect-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            A real team member follows up via email to answer your questions or walk you through next steps.
+          </div>
+          <div class="expect-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            If you're ready to get started, we can schedule a quick call or go straight to your free mock-up request.
+          </div>
+          <div class="expect-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            No pressure, no sales pitch — just a real conversation about what you need.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="form-container">
+
+        <!-- Fast-track banner — shown via JS when ?ready=1 is in URL -->
+        <div class="fast-track-banner" id="fastTrackBanner">
+          <div class="fast-track-banner__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 13 9 20 9"/><polygon points="22 12 13 2 2 12 2 22 9 22 9 15 15 15 15 22 22 22 22 12"/><line x1="9" y1="22" x2="9" y2="15"/><line x1="15" y1="22" x2="15" y2="15"/></svg>
+          </div>
+          <div class="fast-track-banner__text">
+            <div class="fast-track-banner__label">You're on the Fast Track</div>
+            <div class="fast-track-banner__msg">Fill out the form below and we'll send you a <strong>payment link same day</strong> — no mock-up wait required. We'll gather everything we need to get your site underway right away.</div>
+          </div>
+        </div>
+
+        <h2 id="formTitle">Send Us a Message</h2>
+        <p class="form-sub" id="formSub">Have questions? Want to schedule a quick call? Tell us about your business and we'll take it from there.</p>
+
+        <!-- ── GHL CONTACT FORM EMBED ──────────────────────────────
+             Replace the placeholder div below with your GHL contact
+             form embed code. Paste the iframe or JS snippet here.
+             Example:
+             <iframe src="https://api.leadconnectorhq.com/widget/form/..."
+               style="width:100%;border:none;overflow:hidden;"
+               scrolling="no" id="YOUR_FORM_ID">
+             </iframe>
+        ──────────────────────────────────────────────────────────── -->
+        <iframe
+          src="https://go.codexbizops.com/widget/form/OI7gcFjIMBLUjP94BfCI"
+          style="width:100%;height:490px;border:none;border-radius:8px"
+          id="inline-OI7gcFjIMBLUjP94BfCI"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Contact Form"
+          data-height="490"
+          data-layout-iframe-id="inline-OI7gcFjIMBLUjP94BfCI"
+          data-form-id="OI7gcFjIMBLUjP94BfCI"
+          title="Contact Form">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+        <img src="images/logo-white.png" alt="CODEX BizOps" style="height:72px;width:auto;display:block">
+      </a>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#packages">Pricing</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 CODEX Business Operations. All rights reserved.</p>
+      <p class="footer__scripture">&quot;I can do all things through Christ who strengthens me.&quot; &mdash; Philippians 4:13</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://go.codexbizops.com/js/form_embed.js"></script>
+<script>
+// Fast-track banner — activate when ?ready=1 in URL
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  if(params.get('ready') === '1'){
+    var banner = document.getElementById('fastTrackBanner');
+    if(banner) banner.classList.add('visible');
+    var title = document.getElementById('formTitle');
+    if(title) title.textContent = "Let's Get You Started";
+    var sub = document.getElementById('formSub');
+    if(sub) sub.textContent = "Tell us a little about your business and which plan you're interested in — we'll follow up with a payment link same day.";
+  }
+})();
+
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('navLinks');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+  menu.querySelectorAll('.nav__link').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+})();
+</script>
+<script>
+// Smart nav — hide on scroll down, reveal on scroll up
+(function(){
+  var nav = document.querySelector('.nav');
+  if(!nav) return;
+  var lastY = 0, threshold = 80;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y <= threshold){
+      nav.classList.remove('nav--hidden');
+    } else if(y > lastY){
+      nav.classList.add('nav--hidden');
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+    lastY = y;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>

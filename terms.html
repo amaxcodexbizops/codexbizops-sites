@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions — CODEX BizOps</title>
+<meta name="description" content="Terms and Conditions for CODEX Business Operations website design, hosting, and management services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1E1E1E;background:#F8F5EE;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --navy:#373737;
+  --navy-light:#454545;
+  --cream:#F8F5EE;
+  --cream-dark:#F0ECE3;
+  --white:#FFFFFF;
+  --sage:#1A3058;
+  --gold:#c0b283;
+  --gold-dark:#a09070;
+  --gold-light:#d4c8a0;
+  --text:#1E1E1E;
+  --text-muted:#4A4A4A;
+  --border:#DDD8CE;
+  --shadow-sm:0 2px 8px rgba(55,55,55,.08);
+  --radius:12px;
+  --radius-lg:20px;
+}
+
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25}
+h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:800}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;transition:top .3s ease;background:rgba(55,55,55,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav--hidden{top:-120px}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto}
+.nav{position:relative}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__link{color:rgba(255,255,255,.65);font-size:.88rem;font-weight:500;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav__link:hover{color:#fff}
+.nav .btn{padding:9px 20px;font-size:.87rem;border-radius:7px}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav__hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:all .3s ease}
+.nav__hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.nav__hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .nav__hamburger{display:flex}
+  .nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:#373737;flex-direction:column;align-items:stretch;padding:8px 24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:99}
+  .nav__links.open{display:flex}
+  .nav__link{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem;color:rgba(255,255,255,.75)}
+  .nav__link:last-of-type{border-bottom:none}
+  .nav .btn{margin-top:14px;width:100%;justify-content:center;padding:13px 20px;font-size:.95rem}
+}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap}
+.btn-primary{background:var(--gold);color:#373737;box-shadow:0 4px 16px rgba(192,178,131,.3)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:64px 0 52px}
+.page-hero__eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px}
+.page-hero h1{color:#fff;margin-bottom:12px}
+.page-hero__meta{color:rgba(255,255,255,.5);font-size:.88rem}
+
+/* ── TERMS LAYOUT ── */
+.terms-wrap{display:grid;grid-template-columns:240px 1fr;gap:64px;padding:72px 0 96px;align-items:start}
+
+/* Sidebar TOC */
+.toc{position:sticky;top:88px}
+.toc__title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+.toc__list{list-style:none}
+.toc__item{margin-bottom:4px}
+.toc__link{display:block;font-size:.83rem;color:var(--text-muted);padding:5px 10px;border-left:2px solid var(--border);transition:all .15s}
+.toc__link:hover{color:var(--navy);border-left-color:var(--navy);background:rgba(55,55,55,.04)}
+.toc__link.active{color:var(--navy);border-left-color:var(--gold);font-weight:600}
+
+/* Content */
+.terms-content{background:var(--white);border-radius:var(--radius-lg);padding:52px 56px;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.terms-content section{margin-bottom:52px;scroll-margin-top:100px}
+.terms-content section:last-child{margin-bottom:0}
+.terms-section-num{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.terms-content h2{font-size:1.45rem;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.terms-content h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px;margin-top:24px}
+.terms-content p{color:var(--text-muted);margin-bottom:16px;font-size:.95rem}
+.terms-content ul{color:var(--text-muted);font-size:.95rem;padding-left:20px;margin-bottom:16px}
+.terms-content ul li{margin-bottom:8px;padding-left:4px}
+.terms-content strong{color:var(--navy);font-weight:600}
+
+/* Warning box */
+.warn-box{background:#FEF9EC;border:1px solid rgba(192,178,131,.3);border-left:4px solid var(--gold);border-radius:8px;padding:16px 20px;margin-bottom:16px;font-size:.9rem;color:#5C4A1A}
+.warn-box strong{color:#7A5E10}
+
+/* Alert box */
+.alert-box{background:#FEF2F2;border:1px solid rgba(192,57,43,.2);border-left:4px solid #C0392B;border-radius:8px;padding:16px 20px;margin-bottom:16px;font-size:.9rem;color:#7B1C1C}
+
+/* Caps block */
+.caps-block{background:var(--cream-dark);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:16px;font-size:.85rem;font-weight:600;color:var(--navy);letter-spacing:.01em;line-height:1.65}
+
+/* ── FOOTER ── */
+.footer{background:#242424;padding:48px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer__top{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+.footer__links{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.footer__links a{color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s;white-space:nowrap}
+.footer__links a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center}
+.footer__copy{color:rgba(255,255,255,.35);font-size:.8rem;margin-bottom:10px}
+.footer__scripture{color:rgba(255,255,255,.22);font-size:.75rem;font-style:italic}
+@media(max-width:640px){
+  .footer__top{flex-direction:column;align-items:flex-start;gap:24px}
+  .footer__links{gap:16px}
+}
+
+@media(max-width:900px){
+  .terms-wrap{grid-template-columns:1fr}
+  .toc{display:none}
+  .terms-content{padding:32px 24px}
+}
+@media(max-width:640px){
+  .page-hero{padding:48px 0 40px}
+  .terms-content{padding:24px 16px}
+}
+</style>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/favicon-192.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CODEX BizOps">
+<meta property="og:title" content="Terms & Conditions | CODEX BizOps">
+<meta property="og:description" content="Terms and Conditions for CODEX Business Operations website design, hosting, and management services.">
+<meta property="og:image" content="https://codexbizops.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://codexbizops.com/terms.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terms & Conditions | CODEX BizOps">
+<meta name="twitter:description" content="Terms and Conditions for CODEX Business Operations website design, hosting, and management services.">
+<meta name="twitter:image" content="https://codexbizops.com/images/og-image.jpg">
+</head>
+<body>
+
+<nav class="nav">
+      <div class="nav__inner">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="images/logo-white.png" alt="CODEX BizOps" style="height:80px;width:auto;display:block">
+    </a>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="index.html#packages" class="nav__link">Pricing</a>
+      <a href="index.html#faq" class="nav__link">FAQs</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="index.html#mock-up" class="btn btn-primary">Get Free Mock-Up</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__eyebrow">Legal</div>
+    <h1>Terms &amp; Conditions</h1>
+    <div class="page-hero__meta">Last Updated: July 14, 2026 &nbsp;·&nbsp; CODEX Business Operations</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="terms-wrap">
+
+    <!-- Sidebar TOC -->
+    <aside class="toc">
+      <div class="toc__title">On this page</div>
+      <ul class="toc__list">
+        <li class="toc__item"><a class="toc__link" href="#s1">1. Description of Services</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s2">2. Billing &amp; Renewal</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s3">3. Cancellation Policy</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s4">4. Intellectual Property</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s5">5. Plan Changes &amp; Add-Ons</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s6">6. Client Responsibilities</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s7">7. Limitation of Liability</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s8">8. Governing Law</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s9">9. Agreement to Terms</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s10">10. Refund &amp; Chargeback Policy</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s11">11. Mandatory Arbitration</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s12">12. TCPA &amp; SMS Compliance</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s13">13. Domain Management</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s14">14. Portfolio &amp; Marketing Rights</a></li>
+        <li class="toc__item"><a class="toc__link" href="#s15">15. Updates &amp; Maintenance</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="terms-content">
+
+      <p style="font-size:.95rem;color:var(--text-muted);margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--border)">Welcome to CODEX Business Operations ("CODEX," "we," "us," or "our"). By accessing our website, purchasing our services, or enrolling in our subscription packages, you ("Client," "you," or "your") agree to be bound by the following Terms and Conditions. Please read them carefully before completing your purchase.</p>
+
+      <!-- Section 1 -->
+      <section id="s1">
+        <div class="terms-section-num">Section 1</div>
+        <h2>Description of Services</h2>
+        <p>CODEX provides website design, custom build setups, hosting, hands-free site management, and optional business operations integrations (the "Services").</p>
+
+        <h3>The Pro &amp; Elite Build Packages</h3>
+        <p>CODEX offers a custom website build with <strong>$0 upfront design fees</strong>. This free build is explicitly tied to and contingent upon maintaining an active, paid monthly subscription to our hosting and management plans.</p>
+
+        <h3>Optional Boosters</h3>
+        <p>Any selected add-ons (including but not limited to Google Map Optimization, Automated Review Collection, and Dedicated Business Phone Lines) are billed as supplementary monthly or one-time charges, as selected by the Client at checkout or agreed upon in writing.</p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="s2">
+        <div class="terms-section-num">Section 2</div>
+        <h2>Subscription, Billing, and Automatic Renewal</h2>
+
+        <h3>Billing Cycle</h3>
+        <p>By signing up for a CODEX subscription plan, you authorize us to charge your credit card or payment method on file <strong>automatically every month</strong>.</p>
+
+        <h3>Automatic Renewal</h3>
+        <p>Monthly and yearly subscription rates are billed automatically in advance. If you fail to maintain a valid payment method, your services may be temporarily suspended or terminated.</p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="s3">
+        <div class="terms-section-num">Section 3</div>
+        <h2>"Cancel Anytime" Policy &amp; Service Termination</h2>
+
+        <h3>No Long-Term Contracts</h3>
+        <p>We believe in earning your business every month. There are no long-term contracts, and you are free to cancel your monthly subscription at any time.</p>
+
+        <h3>Cancellation Notice</h3>
+        <p>To cancel your subscription, you must submit a cancellation request via email to our support team or through your client portal at least <strong>five (5) business days</strong> before your next scheduled billing date.</p>
+
+        <h3>Post-Cancellation Website Status</h3>
+        <div class="warn-box">
+          <strong>Important:</strong> Because the custom website design and build are provided at $0 upfront in exchange for active hosting, if you cancel your monthly subscription, your website will go dark and your hosting will be terminated. CODEX is under no obligation to keep your website live, store its files, or maintain your data once your subscription is canceled.
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="s4">
+        <div class="terms-section-num">Section 4</div>
+        <h2>Intellectual Property &amp; Code/Design Ownership</h2>
+        <p>To protect our custom engineering and design layouts from being exploited, the following ownership rules apply:</p>
+
+        <h3>Proprietary Layouts</h3>
+        <p>All custom layouts, code, templates, and operational systems built by CODEX remain the <strong>intellectual property of CODEX</strong> and are hosted exclusively on our private network.</p>
+
+        <h3>The Buyout Option</h3>
+        <p>If you wish to cancel your subscription with CODEX but want to take your raw website design, files, copy, and layout assets to another third-party hosting provider, you must pay a flat <strong>$1,500 Buyout Fee</strong>.</p>
+
+        <h3>Transfer of Assets</h3>
+        <p>Upon receipt of the $1,500 buyout payment, CODEX will export your raw website assets and transfer full ownership of those specific design files to you. Without this buyout payment, you do not have permission to copy, scrape, duplicate, or migrate the website design we built to any other hosting platform.</p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="s5">
+        <div class="terms-section-num">Section 5</div>
+        <h2>Plan Changes &amp; Add-Ons</h2>
+        <p>Clients may request to upgrade, downgrade, or add/remove optional services at any time by contacting CODEX in writing. Plan changes take effect at the start of the next billing cycle.</p>
+        <p>Add-on services are billed as supplementary monthly or one-time charges, as agreed upon in writing prior to activation. Removing an add-on does not entitle the Client to a refund for any portion of the current billing period.</p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="s6">
+        <div class="terms-section-num">Section 6</div>
+        <h2>Client Onboarding and Responsibilities</h2>
+
+        <h3>Information Gathering</h3>
+        <p>To build your site, you must provide your logo, brand images, business details, and contact information via our secure onboarding form.</p>
+
+        <h3>Project Delays</h3>
+        <p>CODEX is not responsible for delayed website launches caused by a Client's failure to submit onboarding materials, photos, or necessary access permissions.</p>
+
+        <h3>Approval &amp; Staging</h3>
+        <p>Clients are given access to a private staging area to review, test, and approve the website design. Once approved by the Client, the site will be launched to the public. Subsequent major structural changes after launch are reviewed on a case-by-case basis and may be quoted separately before work begins.</p>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="s7">
+        <div class="terms-section-num">Section 7</div>
+        <h2>Limitation of Liability and Guarantees</h2>
+
+        <h3>No Revenue Guarantees</h3>
+        <p>While our systems are designed to maximize your visibility, professionalism, and lead opportunities, CODEX does not guarantee any specific volume of traffic, inbound phone calls, or sales revenue.</p>
+
+        <h3>Third-Party Platforms</h3>
+        <p>CODEX is not liable for service interruptions, rate changes, or policy updates from third-party platforms utilized in your build (including but not limited to Google, Stripe, or telecommunication carriers).</p>
+
+        <h3>Service Availability</h3>
+        <p>We strive for 99.9% website uptime, but CODEX is not liable for any lost revenue, missed business opportunities, or damages resulting from temporary server downtime or service maintenance.</p>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="s8">
+        <div class="terms-section-num">Section 8</div>
+        <h2>Governing Law</h2>
+        <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of the <strong>State of Texas</strong>, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the courts located in <strong>Williamson County, Texas</strong>.</p>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="s9">
+        <div class="terms-section-num">Section 9</div>
+        <h2>Agreement to Terms</h2>
+        <p>By completing your purchase of a CODEX subscription plan, checking the "I Agree" box at checkout, or submitting your onboarding form, you acknowledge that you have read, understood, and agreed to be bound by these Terms and Conditions.</p>
+      </section>
+
+      <!-- Section 10 -->
+      <section id="s10">
+        <div class="terms-section-num">Section 10</div>
+        <h2>Refund and Chargeback Policy</h2>
+
+        <h3>Strict No-Refund Policy</h3>
+        <div class="warn-box">
+          Due to the digital nature of our hosting services and the immediate allocation of design labor, custom configuration, and server resources, <strong>all payments made to CODEX are 100% non-refundable</strong>. We do not offer prorated refunds, partial refunds, or refunds for unused billing periods.
+        </div>
+
+        <h3>Chargeback Abuse and Disputes</h3>
+        <p>By purchasing our services, you agree that you will not initiate a chargeback or payment dispute with your bank or credit card company without first attempting to resolve the issue directly with CODEX support.</p>
+
+        <h3>Consequences of Unauthorized Disputes</h3>
+        <p>If you initiate an unauthorized chargeback or payment dispute, CODEX reserves the right to:</p>
+        <ul>
+          <li>Instantly terminate your services and take your website offline without prior notice</li>
+          <li>Charge a flat <strong>$150 administrative dispute fee</strong> to cover internal time and merchant penalty costs</li>
+          <li>Report the delinquent account to corporate collections and business credit bureaus</li>
+          <li>Pursue full legal action in the courts of Williamson County, Texas to recover the unpaid balance, dispute fees, and associated legal costs</li>
+        </ul>
+      </section>
+
+      <!-- Section 11 -->
+      <section id="s11">
+        <div class="terms-section-num">Section 11</div>
+        <h2>Mandatory Arbitration and Class Action Waiver</h2>
+
+        <h3>Dispute Resolution First</h3>
+        <p>In the event of any controversy, claim, or dispute arising out of or relating to these Terms or the breach thereof, both you and CODEX agree to first attempt to resolve the issue informally through direct written communication.</p>
+
+        <h3>Binding Arbitration</h3>
+        <p>If the dispute cannot be resolved informally within thirty (30) days, you explicitly agree that the dispute shall be settled by <strong>binding arbitration</strong> administered by the American Arbitration Association (AAA) in accordance with its Commercial Arbitration Rules.</p>
+
+        <h3>Location and Fees</h3>
+        <p>Any arbitration proceedings shall take place exclusively in Williamson County, Texas. Each party shall bear its own costs and attorney's fees, and the arbitrator's decision shall be final and legally binding. Judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction.</p>
+
+        <h3>Class Action Waiver</h3>
+        <div class="caps-block">YOU AND CODEX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. THE ARBITRATOR MAY NOT CONSOLIDATE MORE THAN ONE PERSON'S CLAIMS OR OTHERWISE PRESIDE OVER ANY FORM OF A REPRESENTATIVE OR CLASS PROCEEDING.</div>
+      </section>
+
+      <!-- Section 12 -->
+      <section id="s12">
+        <div class="terms-section-num">Section 12</div>
+        <h2>TCPA and SMS Compliance Liability</h2>
+        <p>CODEX provides the technical infrastructure for automated SMS communication, including the "Never Miss a Job" Text-Back feature. <strong>The Client assumes 100% legal responsibility and liability</strong> for compliance with the Telephone Consumer Protection Act (TCPA), CTIA guidelines, and all local, state, and federal laws regarding automated messaging.</p>
+        <p>The Client warrants that any consumer phone numbers routed through or collected by the system have provided explicit, lawful consent to receive text messages. CODEX is not responsible for any legal claims, penalties, or regulatory fines resulting from the Client's use of automated SMS text messaging or automated email outreach.</p>
+      </section>
+
+      <!-- Section 13 -->
+      <section id="s13">
+        <div class="terms-section-num">Section 13</div>
+        <h2>Third-Party Credentials and Domain Management</h2>
+        <p>To execute our Services, the Client may be required to provide CODEX with access credentials to third-party accounts (including but not limited to domain registrars, DNS managers, and Google Business Profiles). CODEX agrees to handle all credentials securely, but is not responsible for any pre-existing account restrictions, lost credentials, domain expiration, or third-party account suspensions.</p>
+
+        <h3>Client-Provided Domains</h3>
+        <p>If the Client provides their own domain name, the Client retains full legal ownership and registration control of that domain at all times. It is the Client's sole responsibility to maintain the annual registration fees. CODEX is not liable for site downtime caused by a Client's failure to renew their domain. CODEX will provide DNS configuration instructions to connect the domain to CODEX hosting; the Client may update their DNS settings at any time.</p>
+
+        <h3>CODEX-Procured Domains</h3>
+        <p>If the Client requests that CODEX purchase and manage a domain name on their behalf, CODEX retains full legal ownership and registration control of that domain name. The domain is leased to the Client as part of their active monthly subscription.</p>
+
+        <h3>Domain Release Fee</h3>
+        <div class="warn-box">
+          If the Client cancels their subscription and wishes to take ownership of a CODEX-purchased domain name, they must pay a flat <strong>$250 Domain Transfer Fee</strong> in addition to any applicable website buyout fees. CODEX will not transfer or release a domain name if the Client has an outstanding balance or disputed invoice.
+        </div>
+      </section>
+
+      <!-- Section 14 -->
+      <section id="s14">
+        <div class="terms-section-num">Section 14</div>
+        <h2>Portfolio Credit and Marketing Rights</h2>
+        <p>Unless explicitly requested otherwise in writing prior to project launch, CODEX reserves the right to include a small, non-obtrusive attribution link in the footer of the Client's website (e.g., "Powered by CODEX BizOps"). Additionally, CODEX retains the right to display screenshots, case studies, and visual demonstrations of the completed website within our own marketing materials, social media profiles, and agency portfolio.</p>
+      </section>
+
+      <!-- Section 15 -->
+      <section id="s15">
+        <div class="terms-section-num">Section 15</div>
+        <h2>Dashboard Access and Site Maintenance</h2>
+
+        <h3>CODEX Pro Tier — Hands-Free Updates</h3>
+        <p>Pro tier subscribers receive unlimited minor update requests handled by the CODEX team on your behalf. This includes text edits, photo swaps, business hours changes, pricing updates, and similar content changes. Standard turnaround is <strong>24–48 business hours</strong> per request.</p>
+        <p>Large structural changes — such as adding new pages, full redesigns, or new feature integrations — are reviewed on a case-by-case basis and quoted separately before any work begins.</p>
+
+        <h3>CODEX Elite Tier — Hands-Free Updates + Priority Support</h3>
+        <p>Elite tier subscribers receive all Pro tier hands-free update benefits, plus priority turnaround and expanded support for more complex update requests. Large structural changes are reviewed and quoted separately, as with the Pro tier.</p>
+      </section>
+
+      <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);font-size:.88rem;color:var(--text-muted)">
+        Questions about these terms? <a href="contact.html" style="color:var(--sage);font-weight:600;text-decoration:underline">Contact us</a> and we'll be glad to clarify anything before you sign up.
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+        <img src="images/logo-white.png" alt="CODEX BizOps" style="height:72px;width:auto;display:block">
+      </a>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#packages">Pricing</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 CODEX Business Operations. All rights reserved.</p>
+      <p class="footer__scripture">&quot;I can do all things through Christ who strengthens me.&quot; &mdash; Philippians 4:13</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Highlight active TOC item on scroll
+const sections = document.querySelectorAll('section[id]');
+const tocLinks = document.querySelectorAll('.toc__link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.toc__link[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -75% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('navLinks');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+  menu.querySelectorAll('.nav__link').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+})();
+</script>
+<script>
+// Smart nav — hide on scroll down, reveal on scroll up
+(function(){
+  var nav = document.querySelector('.nav');
+  if(!nav) return;
+  var lastY = 0, threshold = 80;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y <= threshold){
+      nav.classList.remove('nav--hidden');
+    } else if(y > lastY){
+      nav.classList.add('nav--hidden');
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+    lastY = y;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
