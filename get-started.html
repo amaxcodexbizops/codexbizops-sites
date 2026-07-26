@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started — CODEX BizOps</title>
+<meta name="description" content="Ready to get your business online? Lock in 50% off your first month and let's build your site.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J92BHGG5C2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J92BHGG5C2');
+</script>
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/favicon-192.png">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1E1E1E;background:#F8F5EE;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --navy:#373737;
+  --navy-light:#454545;
+  --cream:#F8F5EE;
+  --cream-dark:#F0ECE3;
+  --white:#FFFFFF;
+  --sage:#1A3058;
+  --gold:#c0b283;
+  --gold-dark:#a09070;
+  --gold-light:#d4c8a0;
+  --text:#1E1E1E;
+  --text-muted:#5C5C5C;
+  --border:#DDD8CE;
+  --shadow-sm:0 2px 8px rgba(55,55,55,.08);
+  --shadow-md:0 6px 24px rgba(55,55,55,.12);
+  --shadow-lg:0 16px 48px rgba(55,55,55,.16);
+  --radius:12px;
+  --radius-lg:20px;
+}
+
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;transition:top .3s ease;background:rgba(55,55,55,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav--hidden{top:-120px}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s ease;white-space:nowrap}
+.btn-primary{background:var(--gold);color:#373737;box-shadow:0 4px 16px rgba(192,178,131,.3)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.btn-lg{padding:16px 32px;font-size:1rem}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__link{color:rgba(255,255,255,.65);font-size:.88rem;font-weight:500;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav__link:hover{color:#fff}
+.nav .btn{padding:9px 20px;font-size:.87rem;border-radius:7px}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav__hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:all .3s ease}
+.nav__hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.nav__hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .nav__hamburger{display:flex}
+  .nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:#373737;flex-direction:column;align-items:stretch;padding:8px 24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:99}
+  .nav__links.open{display:flex}
+  .nav__link{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem;color:rgba(255,255,255,.75)}
+  .nav__link:last-of-type{border-bottom:none}
+  .nav .btn{margin-top:14px;width:100%;justify-content:center;padding:13px 20px;font-size:.95rem}
+}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(192,178,131,.12) 0%,transparent 70%);pointer-events:none}
+.hero__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero__sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:520px;margin:0 auto}
+
+/* ── STEPS ── */
+.steps{padding:72px 0;background:var(--cream-dark)}
+.steps__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;margin-top:48px}
+.steps__grid::before{content:'';position:absolute;top:26px;left:calc(16.66% + 12px);right:calc(16.66% + 12px);height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:0}
+.step{text-align:center;padding:0 24px;position:relative;z-index:1}
+.step__num{width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 16px rgba(55,55,55,.2)}
+.step:nth-child(2) .step__num{background:var(--sage)}
+.step:nth-child(3) .step__num{background:var(--gold);color:var(--navy)}
+.step h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.step p{font-size:.875rem;color:var(--text-muted);line-height:1.65}
+
+/* ── PROMO ── */
+.promo{padding:72px 0;background:var(--cream-dark)}
+.promo__card{background:linear-gradient(140deg,#0d1f3c 0%,#1A3058 55%,#0d1f3c 100%);border-radius:var(--radius-lg);padding:60px 48px 52px;text-align:center;position:relative;overflow:hidden;box-shadow:0 32px 80px rgba(13,31,60,.45),0 0 0 1px rgba(192,178,131,.18)}
+.promo__card::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(192,178,131,.12) 0%,transparent 70%);pointer-events:none}
+.promo__ribbon{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));color:#1a1a1a;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 22px;border-radius:100px;margin-bottom:36px;box-shadow:0 4px 20px rgba(192,178,131,.4)}
+.promo__ribbon svg{flex-shrink:0}
+.promo__headline{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:32px;line-height:1.2}
+.promo__headline span{color:var(--gold-light)}
+.promo__split{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:20px}
+.promo__was-block{text-align:center;padding:0 32px}
+.promo__was-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.promo__was-price{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:rgba(255,255,255,.22);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.35)}
+.promo__divider-arrow{font-size:2rem;color:var(--gold);padding:0 8px;line-height:1}
+.promo__now-block{text-align:center;padding:0 32px}
+.promo__now-label{font-size:.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.promo__now-price{font-family:'Playfair Display',serif;font-size:5rem;font-weight:800;color:#fff;line-height:1;text-shadow:0 0 40px rgba(192,178,131,.3)}
+.promo__now-price sup{font-size:2rem;vertical-align:top;margin-top:10px;display:inline-block;color:var(--gold-light)}
+.promo__now-price sub{font-size:1.1rem;vertical-align:bottom;margin-bottom:12px;display:inline-block;color:var(--gold-light);font-weight:600}
+.promo__save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(192,178,131,.15);border:1px solid rgba(192,178,131,.25);color:var(--gold-light);font-size:.82rem;font-weight:700;padding:7px 18px;border-radius:100px;margin-bottom:28px}
+.promo__desc{color:rgba(255,255,255,.6);font-size:.92rem;max-width:440px;margin:0 auto 28px;line-height:1.7}
+.btn-claim{background:var(--gold);color:#1a1a1a;padding:16px 40px;font-size:1rem;font-weight:800;border-radius:10px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 32px rgba(192,178,131,.4);letter-spacing:.01em;transition:all .2s ease;text-decoration:none}
+.btn-claim:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 40px rgba(192,178,131,.5)}
+.promo__fine{color:rgba(255,255,255,.25);font-size:.74rem;margin-top:20px}
+
+/* ── INCLUDED ── */
+.included{padding:72px 0;background:var(--white)}
+.section-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;text-align:center}
+.section-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--navy);line-height:1.2;text-align:center;margin-bottom:12px}
+.section-sub{font-size:.95rem;color:var(--text-muted);text-align:center;max-width:500px;margin:0 auto 48px;line-height:1.75}
+.included__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.included__item{display:flex;align-items:flex-start;gap:14px;background:var(--cream);border-radius:var(--radius);padding:22px 20px;border:1px solid var(--border)}
+.included__icon{width:38px;height:38px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.included__icon svg{color:var(--gold-light)}
+.included__text h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.included__text p{font-size:.8rem;color:var(--text-muted);line-height:1.55}
+
+/* ── SOCIAL PROOF ── */
+.proof{padding:48px 0;background:var(--cream-dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.proof__inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.proof__stat{text-align:center}
+.proof__num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--navy);line-height:1}
+.proof__label{font-size:.78rem;color:var(--text-muted);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.proof__divider{width:1px;height:48px;background:var(--border)}
+.proof__trust{display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:.85rem;font-weight:500}
+.proof__trust svg{color:var(--gold)}
+
+/* ── FORM ── */
+.form-section{padding:80px 0;background:var(--cream)}
+.form-section__inner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.form-left h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:16px}
+.form-left p{color:var(--text-muted);font-size:.95rem;line-height:1.75;margin-bottom:28px}
+.what-next{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);padding:24px}
+.what-next h4{font-size:.82rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.what-next-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:.875rem;color:var(--text-muted);line-height:1.6}
+.what-next-item:last-child{margin-bottom:0}
+.what-next-item svg{color:var(--gold);flex-shrink:0;margin-top:3px}
+.form-right{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);padding:36px;box-shadow:var(--shadow-sm)}
+
+/* ── FOOTER ── */
+.footer{background:#242424;padding:48px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer__top{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+.footer__links{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.footer__links a{color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s;white-space:nowrap}
+.footer__links a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center}
+.footer__copy{color:rgba(255,255,255,.35);font-size:.8rem;margin-bottom:10px}
+.footer__scripture{color:rgba(255,255,255,.22);font-size:.75rem;font-style:italic}
+
+@media(max-width:768px){
+  .steps__grid{grid-template-columns:1fr;gap:32px}
+  .steps__grid::before{display:none}
+  .included__grid{grid-template-columns:1fr}
+  .form-section__inner{grid-template-columns:1fr}
+  .proof__divider{display:none}
+  .promo__card{padding:40px 24px}
+  .promo__split{gap:8px}
+  .promo__was-block,.promo__now-block{padding:0 16px}
+  .promo__now-price{font-size:3.8rem}
+  .footer__top{flex-direction:column;align-items:flex-start}
+  .footer__links{gap:16px}
+}
+@media(max-width:480px){
+  .hero{padding:56px 16px 48px}
+  .promo__new{font-size:2.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="images/logo-white.png" alt="CODEX BizOps" style="height:80px;width:auto;display:block">
+    </a>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="index.html#packages" class="nav__link">Pricing</a>
+      <a href="index.html#faq" class="nav__link">FAQs</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="#contact" class="btn btn-primary">Claim Your Site →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__eyebrow">Your Site Is Already Built</div>
+    <h1>The Hard Part's Done — Now Let's Make It <em>Live</em></h1>
+    <p class="hero__sub">We built your mock-up from scratch — no charge, no commitment. If you liked what you saw, here's how we take it from concept to a real, live website in about a week.</p>
+    <a href="#contact" class="btn btn-primary btn-lg" style="margin-top:28px;position:relative;z-index:1">Claim Your Site →</a>
+  </div>
+</section>
+
+<!-- ── STEPS ── -->
+<section class="steps">
+  <div class="container">
+    <div class="steps__grid">
+      <div class="step">
+        <div class="step__num">1</div>
+        <h3>Tell Us You're Ready</h3>
+        <p>Fill out the form below. Let us know you want to move forward and share any tweaks you'd like before we finalize the build. Takes two minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <h3>We Lock In the Details</h3>
+        <p>We revisit your mock-up together — pages, content, photos, services — and nail down exactly what goes live before we write a single line of code.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <h3>Your Site Goes Live</h3>
+        <p>We handle the entire build. You review and approve. We flip the switch. After that, any updates are just a text or email away — no logins, no headaches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROMO ── -->
+<section class="promo">
+  <div class="container">
+    <div class="promo__card">
+      <div class="promo__ribbon">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        New Client Offer — Limited Time
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+
+      <p class="promo__headline">Your first month is <span>half off</span> — just for saying yes.</p>
+
+      <div class="promo__split">
+        <div class="promo__was-block">
+          <div class="promo__was-label">Regular Price</div>
+          <div class="promo__was-price">$99</div>
+        </div>
+        <div class="promo__divider-arrow">→</div>
+        <div class="promo__now-block">
+          <div class="promo__now-label">Your First Month</div>
+          <div class="promo__now-price"><sup>$</sup>49<sub>/mo</sub></div>
+        </div>
+      </div>
+
+      <div class="promo__save-badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        You save $50 your first month
+      </div>
+
+      <p class="promo__desc">We already built your mock-up for free. Now we're making it easy to say yes — lock in 50% off and we'll start the build the moment payment clears.</p>
+
+      <a href="#contact" class="btn-claim">Claim This Offer →</a>
+
+      <p class="promo__fine">Starter plan ($99/mo) only. Pro plan ($129/mo) first month at $64.50. Fill out the form below to claim.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S INCLUDED ── -->
+<section class="included">
+  <div class="container">
+    <div class="section-eyebrow">Everything That's Covered</div>
+    <h2 class="section-title">What You Get Every Month</h2>
+    <p class="section-sub">Your monthly hosting fee isn't just for keeping the lights on — it covers everything needed to keep your site working hard for your business.</p>
+    <div class="included__grid">
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>Your Website, Live &amp; Online</h4>
+          <p>Fast, secure hosting that keeps your site up and running 24/7 without you lifting a finger.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>SSL Security Certificate</h4>
+          <p>Your site shows the padlock in the browser — required for trust and for Google to rank you.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>Ongoing Updates on Request</h4>
+          <p>New service? Price change? Updated photos? Just text or email us and it's handled — usually within one business day.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>Contact Form &amp; Lead Capture</h4>
+          <p>Customers fill out your form and the message lands straight in your inbox — no missed opportunities.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>Mobile-Friendly Design</h4>
+          <p>Your site looks sharp on every device — phone, tablet, desktop. Most of your visitors are on mobile.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>No Tech Headaches — Ever</h4>
+          <p>No dashboards to log into, no plugins to update, no domain settings to figure out. We own all of that.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>Local SEO Foundation</h4>
+          <p>Your site is structured to help Google understand who you are, where you work, and what you offer.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>Performance &amp; Uptime Monitoring</h4>
+          <p>We keep an eye on the technical side so you never have to worry about your site going down without us knowing.</p>
+        </div>
+      </div>
+
+      <div class="included__item">
+        <div class="included__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" width="4" height="4" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="included__text">
+          <h4>A Real Person Behind It All</h4>
+          <p>Not a ticket queue. Not a bot. When you reach out, you hear back from a human who actually built your site.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SOCIAL PROOF ── -->
+<section class="proof">
+  <div class="container">
+    <div class="proof__inner">
+      <div class="proof__stat">
+        <div class="proof__num">~1 Week</div>
+        <div class="proof__label">Average Build Time</div>
+      </div>
+      <div class="proof__divider"></div>
+      <div class="proof__stat">
+        <div class="proof__num">100%</div>
+        <div class="proof__label">Custom — No Templates</div>
+      </div>
+      <div class="proof__divider"></div>
+      <div class="proof__stat">
+        <div class="proof__num">Zero</div>
+        <div class="proof__label">Logins Required</div>
+      </div>
+      <div class="proof__divider"></div>
+      <div class="proof__trust">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No contracts. Cancel anytime.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORM ── -->
+<section class="form-section" id="contact">
+  <div class="container">
+    <div class="form-section__inner">
+
+      <div class="form-left">
+        <div class="section-eyebrow" style="text-align:left">Let's Make It Official</div>
+        <h2>Ready to Claim Your Site?</h2>
+        <p>Fill out the form and let us know you're ready to move forward. The 50% discount is automatically applied to your first invoice.</p>
+        <div class="what-next">
+          <h4>What Happens After You Submit</h4>
+          <div class="what-next-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            We reach out within one business day — usually the same day.
+          </div>
+          <div class="what-next-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            We go over your mock-up together, finalize the details, and lock in your plan.
+          </div>
+          <div class="what-next-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            We apply the 50% discount and send your first invoice. Once paid, we start the build.
+          </div>
+          <div class="what-next-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Your site is live in about a week. After that, we're your on-call team — just text or email.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-right">
+        <iframe
+          src="https://go.codexbizops.com/widget/form/OI7gcFjIMBLUjP94BfCI"
+          style="width:100%;height:680px;border:none;border-radius:8px"
+          id="inline-OI7gcFjIMBLUjP94BfCI"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Contact Form"
+          data-height="680"
+          data-layout-iframe-id="inline-OI7gcFjIMBLUjP94BfCI"
+          data-form-id="OI7gcFjIMBLUjP94BfCI"
+          title="Contact Form">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none">
+        <img src="images/logo-white.png" alt="CODEX BizOps" style="height:72px;width:auto;display:block">
+      </a>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#packages">Pricing</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 CODEX Business Operations. All rights reserved.</p>
+      <p class="footer__scripture">&quot;I can do all things through Christ who strengthens me.&quot; &mdash; Philippians 4:13</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('navLinks');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+  menu.querySelectorAll('.nav__link').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+})();
+// Smart nav hide/show
+(function(){
+  var nav = document.querySelector('.nav');
+  if(!nav) return;
+  var lastY = 0, threshold = 80;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y <= threshold){ nav.classList.remove('nav--hidden'); }
+    else if(y > lastY){ nav.classList.add('nav--hidden'); }
+    else { nav.classList.remove('nav--hidden'); }
+    lastY = y;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
